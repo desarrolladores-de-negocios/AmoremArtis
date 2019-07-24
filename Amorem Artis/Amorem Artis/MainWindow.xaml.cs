@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BeautySolutions.View.ViewModel;
+using MaterialDesignThemes.Wpf;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DropDownMenu;
 
 namespace Amorem_Artis
 {
@@ -23,6 +26,27 @@ namespace Amorem_Artis
         public MainWindow()
         {
             InitializeComponent();
+
+            var menuRegister = new List<SubItem>();
+            menuRegister.Add(new SubItem("Instrucciones", new UserControlInstrumentos()));
+            menuRegister.Add(new SubItem("Secciones"));
+            menuRegister.Add(new SubItem("Sulfeo"));
+            var item1 = new ItemMenu("Cursos", menuRegister, PackIconKind.Class);
+
+
+            Menu.Children.Add(new UserControlMenuItem(item1, this));
+  
+        }
+
+        internal void SwitchScreen(object sender)
+        {
+            var screen = ((UserControl)sender);
+
+            if (screen != null)
+            {
+                StackPanelPrincipal.Children.Clear();
+                StackPanelPrincipal.Children.Add(screen);
+            }
         }
     }
 }
