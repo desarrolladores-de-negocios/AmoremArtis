@@ -27,15 +27,36 @@
                 <Button x:Name="btnElimarSeccion" Content="Eliminar Seccion"  Margin="10,0,0,0"  Visibility="Visible" Click="BtnElimarSeccion_Click"/>
                 <StackPanel x:Name="stkSeccion" Orientation="Horizontal"  HorizontalAlignment="Center" Margin="20,0,0,0" Visibility="Collapsed">
                     <TextBlock Text="Seccion" FontSize="20"/>
-                    <TextBox x:Name="txtSeccion" Width="200" FontSize="20"/>
+                    <TextBox x:Name="txtSeccion" Width="200" FontSize="20" Visibility="Collapsed" />
+                    <ComboBox x:Name="cbSeccion" Width="200" FontSize="20" Visibility="Collapsed"/>
+                    <TextBlock x:Name="blNombreSeccion" Text="Nombre" FontSize="20" Margin="30,0,0,0"/>
+                    <TextBox x:Name="txtNombreSeccion" Width="200" FontSize="20" />
                 </StackPanel>
             </StackPanel>
         </StackPanel>
-        <DataGrid x:Name="gridSeccion" Margin="20,0,20,0"  Visibility="Visible" VerticalAlignment="Stretch" Grid.Row="3"/>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel x:Name="stkCategoria" Grid.Column="0" Margin="20,0,20,0"  Visibility="Collapsed">
+                <TextBlock Text="Categorias" FontSize="22"/>
+                <DataGrid x:Name="gridCategoria" VerticalAlignment="Stretch" MinHeight="300" />
+            </StackPanel>
+            <StackPanel  Grid.Column="1" Margin="20,0,20,0" >
+                <TextBlock Text="Secciones" FontSize="22"/>
+                <DataGrid x:Name="gridSeccion"  Visibility="Visible" VerticalAlignment="Stretch" MinHeight="300" />
+            </StackPanel>
+            <StackPanel x:Name="stkInstrumento"  Grid.Column="2" Margin="20,0,20,0" Visibility="Collapsed" >
+                <TextBlock Text="Instrumento" FontSize="22"/>
+                <DataGrid x:Name="gridInstrumento"  VerticalAlignment="Stretch" MinHeight="300" />
+            </StackPanel>
+        </Grid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4">
             <Button x:Name="btnAgregar" Content="Agregar" Margin="10,0,0,0" Visibility="Collapsed"/>
             <Button x:Name="btnModificar" Content="Modificar" Margin="10,0,0,0"  Visibility="Collapsed" />
-            <Button x:Name="btnEliminar" Content="Elimanar" Margin="10,0,0,0" Visibility="Collapsed"  />
+            <Button x:Name="btnEliminar" Content="Eliminar" Margin="10,0,0,0" Visibility="Collapsed"  />
             <Button x:Name="btnVolver" Content="Volver" Margin="10,0,0,0" Visibility="Collapsed" Click="BtnVolver_Click" />
         </StackPanel>
     </Grid>

@@ -53,7 +53,8 @@ namespace Amorem_Artis
 
         private void BtnElimarInstrumento_Click(object sender, RoutedEventArgs e)
         {
-            stkInstrumento.Visibility = Visibility.Visible;
+            
+            txtIns.Visibility = Visibility.Collapsed;
             btnEliminar.Visibility = Visibility.Visible;
             btnVolver.Visibility = Visibility.Visible;
             btnNuevoInstrumento.Visibility = Visibility.Collapsed;
