@@ -50,12 +50,23 @@ namespace Amorem_Artis
 
         private void BtnElimarSeccion_Click(object sender, RoutedEventArgs e)
         {
-
+            stkSeccion.Visibility = Visibility.Visible;
+            btnEliminar.Visibility = Visibility.Visible;
+            btnVolver.Visibility = Visibility.Visible;
+            btnNuevaSeccion.Visibility = Visibility.Collapsed;
+            btnModificarSeccion.Visibility = Visibility.Collapsed;
         }
 
         private void BtnVolver_Click(object sender, RoutedEventArgs e)
         {
-
+            stkSeccion.Visibility = Visibility.Collapsed;
+            btnAgregar.Visibility = Visibility.Collapsed;
+            btnModificar.Visibility = Visibility.Collapsed;
+            btnEliminar.Visibility = Visibility.Collapsed;
+            btnVolver.Visibility = Visibility.Collapsed;
+            btnNuevaSeccion.Visibility = Visibility.Visible;
+            btnModificarSeccion.Visibility = Visibility.Visible;
+            btnElimarSeccion.Visibility = Visibility.Visible;
         }
     }
 }
