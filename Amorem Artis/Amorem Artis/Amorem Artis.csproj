@@ -63,9 +63,6 @@
     </ApplicationDefinition>
     <Compile Include="ItemMenu.cs" />
     <Compile Include="SubItem.cs" />
-    <Compile Include="UserControlInstrumentos.xaml.cs">
-      <DependentUpon>UserControlInstrumentos.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControlMenuItem.xaml.cs">
       <DependentUpon>UserControlMenuItem.xaml</DependentUpon>
     </Compile>
@@ -81,10 +78,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UserControlInstrumentos.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="UserControlMenuItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
