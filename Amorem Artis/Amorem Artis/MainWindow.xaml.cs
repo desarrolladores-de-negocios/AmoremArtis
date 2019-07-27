@@ -33,7 +33,7 @@ namespace Amorem_Artis
             var menuRegister = new List<SubItem>();
             menuRegister.Add(new SubItem("Instrumentos", new UserControlInstrumentos()));
             menuRegister.Add(new SubItem("Secciones", new UserControlSeccion()));
-            menuRegister.Add(new SubItem("Sulfeo"));
+            menuRegister.Add(new SubItem("Solfeo", new UserControlSolfeo()));
             var item1 = new ItemMenu("Cursos", menuRegister, PackIconKind.Class);
 
 

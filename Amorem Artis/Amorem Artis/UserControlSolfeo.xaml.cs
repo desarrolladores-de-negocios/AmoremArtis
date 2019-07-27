@@ -24,5 +24,49 @@ namespace Amorem_Artis
         {
             InitializeComponent();
         }
+
+        private void BtnModificarSolfeo_Click(object sender, RoutedEventArgs e)
+        {
+            stkSolfeo.Visibility = Visibility.Visible;
+            btnModificar.Visibility = Visibility.Visible;
+            btnVolver.Visibility = Visibility.Visible;
+            btnElimarSolfeo.Visibility = Visibility.Collapsed;
+            btnNuevoSolfeo.Visibility = Visibility.Collapsed;
+        }
+
+        private void BtnElimarSolfeo_Click(object sender, RoutedEventArgs e)
+        {
+            stkSolfeo.Visibility = Visibility.Visible;
+            btnEliminar.Visibility = Visibility.Visible;
+            btnVolver.Visibility = Visibility.Visible;
+            btnNuevoSolfeo.Visibility = Visibility.Collapsed;
+            btnModificarSolfeo.Visibility = Visibility.Collapsed;
+        }
+
+        private void BtnNuevoSolfeo_Click(object sender, RoutedEventArgs e)
+        {
+            stkSolfeo.Visibility = Visibility.Visible;
+            btnAgregar.Visibility = Visibility.Visible;
+            btnVolver.Visibility = Visibility.Visible;
+            btnModificarSolfeo.Visibility = Visibility.Collapsed;
+            btnElimarSolfeo.Visibility = Visibility.Collapsed;
+        }
+
+        private void BtnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            stkSolfeo.Visibility = Visibility.Collapsed;
+            btnAgregar.Visibility = Visibility.Collapsed;
+            btnModificar.Visibility = Visibility.Collapsed;
+            btnEliminar.Visibility = Visibility.Collapsed;
+            btnVolver.Visibility = Visibility.Collapsed;
+            btnNuevoSolfeo.Visibility = Visibility.Visible;
+            btnModificarSolfeo.Visibility = Visibility.Visible;
+            btnElimarSolfeo.Visibility = Visibility.Visible;
+        }
+
+        private void Salir_Click(object sender, RoutedEventArgs e)
+        {
+            (this.Parent as Panel).Children.Remove(this);
+        }
     }
 }
