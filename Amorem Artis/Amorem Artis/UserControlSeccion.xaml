@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Amorem_Artis.UserControlInstrumentos"
+﻿<UserControl x:Class="Amorem_Artis.UserControlSeccion"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -17,21 +17,21 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid Background="#F12C20" Grid.Row="0">
-            <TextBlock Text="Instrumentos" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
+            <TextBlock Text="Secciones" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
             <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#F12C20" BorderBrush="#F12C20" Margin="0,0,10,0" Click="Salir_Click" />
         </Grid>
         <StackPanel Orientation="Vertical" Grid.Row="2">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="btnNuevoInstrumento" Content="Nuevo Instrumento"  Visibility="Visible" Click="BtnNuevoInstrumento_Click"/>
-                <Button x:Name="btnModificarInstrumento" Content="Modificar Instrumento"  Margin="10,0,0,0"  Visibility="Visible" Click="BtnModificarInstrumento_Click"/>
-                <Button x:Name="btnElimarInstrumento" Content="Eliminar Instrumento"  Margin="10,0,0,0"  Visibility="Visible" Click="BtnElimarInstrumento_Click"/>
-                <StackPanel x:Name="stkInstrumento" Orientation="Horizontal"  HorizontalAlignment="Center" Margin="20,0,0,0" Visibility="Collapsed">
-                    <TextBlock Text="Instrumento" FontSize="20"/>
-                    <TextBox x:Name="txtInstrumento" Width="200" FontSize="20"/>
+                <Button x:Name="btnNuevaSeccion" Content="Nueva Seccion"  Visibility="Visible" Click="BtnNuevaSeccion_Click"/>
+                <Button x:Name="btnModificarSeccion" Content="Modificar Seccion"  Margin="10,0,0,0"  Visibility="Visible" Click="BtnModificarSeccion_Click"/>
+                <Button x:Name="btnElimarSeccion" Content="Eliminar Seccion"  Margin="10,0,0,0"  Visibility="Visible" Click="BtnElimarSeccion_Click"/>
+                <StackPanel x:Name="stkSeccion" Orientation="Horizontal"  HorizontalAlignment="Center" Margin="20,0,0,0" Visibility="Collapsed">
+                    <TextBlock Text="Seccion" FontSize="20"/>
+                    <TextBox x:Name="txtSeccion" Width="200" FontSize="20"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
-        <DataGrid x:Name="gridInstrumentos" Margin="20,0,20,0"  Visibility="Visible" VerticalAlignment="Stretch" Grid.Row="3"/>
+        <DataGrid x:Name="gridSeccion" Margin="20,0,20,0"  Visibility="Visible" VerticalAlignment="Stretch" Grid.Row="3"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4">
             <Button x:Name="btnAgregar" Content="Agregar" Margin="10,0,0,0" Visibility="Collapsed"/>
             <Button x:Name="btnModificar" Content="Modificar" Margin="10,0,0,0"  Visibility="Collapsed" />

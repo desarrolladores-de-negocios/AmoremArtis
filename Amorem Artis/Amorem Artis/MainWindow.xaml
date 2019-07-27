@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Amorem_Artis"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Menu" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="Menu" Height="620" Width="1080" WindowStartupLocation="CenterScreen" >
     <Grid Background="#EFE2BA">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -28,14 +28,16 @@
                 <RowDefinition Height="70"/>
                 <RowDefinition Height="326*"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Background="#EFE2BA">
-                <Image Source="Assets/logo.png"/>
-            </Grid>
+            <Grid Grid.Row="0" Background="#F12C20" Height="70" VerticalAlignment="Top" Margin="10,0,10,0"/>
+            <TextBlock Name="dateText" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="White" FontStyle="Italic"/>
+
             <ScrollViewer HorizontalAlignment="Stretch" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1">
                 <StackPanel x:Name="Menu" Margin="10"/>
             </ScrollViewer>
         </Grid>
-        
-        <StackPanel x:Name="StackPanelPrincipal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch"/>
+
+        <Grid x:Name="GridPrincipal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" >
+            <Image Source="Recursos/Logo.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="400"/>
+        </Grid>
     </Grid>
 </Window>

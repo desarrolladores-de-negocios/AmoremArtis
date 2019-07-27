@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DropDownMenu;
+using System.Windows.Threading;
 
 namespace Amorem_Artis
 {
@@ -27,15 +28,29 @@ namespace Amorem_Artis
         {
             InitializeComponent();
 
+            IniciarReloj();
+
             var menuRegister = new List<SubItem>();
-            menuRegister.Add(new SubItem("Instrucciones", new UserControlInstrumentos()));
-            menuRegister.Add(new SubItem("Secciones"));
+            menuRegister.Add(new SubItem("Instrumentos", new UserControlInstrumentos()));
+            menuRegister.Add(new SubItem("Secciones", new UserControlSeccion()));
             menuRegister.Add(new SubItem("Sulfeo"));
             var item1 = new ItemMenu("Cursos", menuRegister, PackIconKind.Class);
 
 
             Menu.Children.Add(new UserControlMenuItem(item1, this));
   
+        }
+        private void IniciarReloj()
+        {
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            dateText.Text = DateTime.Now.ToString();
         }
 
         internal void SwitchScreen(object sender)
@@ -44,8 +59,7 @@ namespace Amorem_Artis
 
             if (screen != null)
             {
-                StackPanelPrincipal.Children.Clear();
-                StackPanelPrincipal.Children.Add(screen);
+                GridPrincipal.Children.Add(screen);
             }
         }
     }
