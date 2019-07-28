@@ -63,6 +63,12 @@
     </ApplicationDefinition>
     <Compile Include="ItemMenu.cs" />
     <Compile Include="SubItem.cs" />
+    <Compile Include="UserControlMaestroAgregar.xaml.cs">
+      <DependentUpon>UserControlMaestroAgregar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlMaestros.xaml.cs">
+      <DependentUpon>UserControlMaestros.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlMenuItem.xaml.cs">
       <DependentUpon>UserControlMenuItem.xaml</DependentUpon>
     </Compile>
@@ -78,6 +84,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserControlMaestroAgregar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlMaestros.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControlMenuItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
