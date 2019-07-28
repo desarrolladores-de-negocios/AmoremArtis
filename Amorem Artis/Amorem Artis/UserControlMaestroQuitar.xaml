@@ -31,7 +31,7 @@
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Row="8">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                <Button x:Name="btnQuitar" Content="Quitar"  Margin="100,10,0,0" Visibility="Visible" Click="BtnAgregar_Click"/>
+                <Button x:Name="btnQuitar" Content="Quitar" Margin="100,10,0,0" Click="BtnAgregar_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>

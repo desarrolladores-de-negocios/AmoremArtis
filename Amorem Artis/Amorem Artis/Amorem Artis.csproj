@@ -72,6 +72,12 @@
     <Compile Include="UserControlMaestroQuitar.xaml.cs">
       <DependentUpon>UserControlMaestroQuitar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlSeccionAgregar.xaml.cs">
+      <DependentUpon>UserControlSeccionAgregar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlSecciones.xaml.cs">
+      <DependentUpon>UserControlSecciones.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlMaestros.xaml.cs">
       <DependentUpon>UserControlMaestros.xaml</DependentUpon>
     </Compile>
@@ -101,6 +107,14 @@
     <Page Include="UserControlMaestroQuitar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlSeccionAgregar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlSecciones.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControlMaestros.xaml">
       <SubType>Designer</SubType>

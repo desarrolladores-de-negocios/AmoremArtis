@@ -16,14 +16,13 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid Background="#F12C20" Grid.Row="0">
-            <TextBlock Text="Maestros" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
+            <TextBlock Text="Secciones" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
             <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#F12C20" BorderBrush="#F12C20" Margin="0,0,10,0" Click="Salir_Click"/>
         </Grid>
         <StackPanel Orientation="Vertical" Grid.Row="2">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="btnNuevoMaestro" Content="Nuevo Maestro" Click="BtnNuevoMaestro_Click"/>
-                <Button x:Name="btnModificarMaestro" Content="Modificar Maestro" Margin="10,0,0,0" Click="BtnModificarMaestro_Click"/>
-                <Button x:Name="btnEliminarMaestro" Content="Eliminar Maestro" Margin="10,0,0,0" Click="BtnEliminarMaestro_Click"/>
+                <Button x:Name="btnAgregarMaestroSeccion" Content="Agregar maestro a seccion" Click="BtnAgregarMaestroSeccion_Click"/>
+                <Button x:Name="btnQuitarMaestroSeccion" Content="Quita maestro de seccion" Margin="10,0,0,0" Click="BtnQuitarMaestroSeccion_Click"/>
             </StackPanel>
         </StackPanel>
         <Grid Grid.Row="3">
@@ -33,7 +32,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="1" Orientation="20,0,20,0">
-                <TextBlock Text="Maestros" FontSize="22"/>
+                <TextBlock Text="Secciones" FontSize="22"/>
                 <DataGrid x:Name="gridMaestros" Visibility="Visible" VerticalAlignment="Stretch" MinHeight="300"/>
             </StackPanel>
         </Grid>
