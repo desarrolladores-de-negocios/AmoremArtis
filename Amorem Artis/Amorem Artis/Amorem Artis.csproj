@@ -66,6 +66,9 @@
     <Compile Include="UserControlMaestroAgregar.xaml.cs">
       <DependentUpon>UserControlMaestroAgregar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlMaestroModificar.xaml.cs">
+      <DependentUpon>UserControlMaestroModificar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlMaestroQuitar.xaml.cs">
       <DependentUpon>UserControlMaestroQuitar.xaml</DependentUpon>
     </Compile>
@@ -88,6 +91,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UserControlMaestroAgregar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlMaestroModificar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
