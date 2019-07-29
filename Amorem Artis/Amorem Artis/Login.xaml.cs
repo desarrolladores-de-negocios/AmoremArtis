@@ -23,5 +23,34 @@ namespace Amorem_Artis
         {
             InitializeComponent();
         }
+
+        private void BtnIngresar_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtUsuario.Text == String.Empty || txtUsuario.Text == String.Empty)
+                MessageBox.Show("Usuario o Contrasena incorrecta. Intente otra vez!");
+            else
+            {
+                try
+                {
+                    MainWindow main = new MainWindow();
+                    main.ShowDialog();
+
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+
+        private void BtnSalir_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Desea salir de la aplicacion?", "",MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
+            }
+        }
     }
 }

@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="Login" Height="450" Width="800">
     <Grid Background="#EFE2BA">
-        
+        <TextBlock Text="Academia Amorem Artis" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Margin="30" FontSize="25"/>
+
+        <Label Content="Usuario" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="279,164,453,225" FontSize="15" Height="35" Width="65"></Label>
+        <Label Content="Contraseña" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="279,230,428,163" FontSize="15" Height="35" Width="85"></Label>
+
+        <TextBox Name="txtUsuario" Text="" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="391,162,301,223" FontSize="15" Height="34" Width="100"></TextBox>
+        <TextBox Name="txtPassword" Text="" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="391,226,301,159" FontSize="15" Height="34" Width="100"></TextBox>
+
+        <Button Name="btnIngresar" Content="Ingresar" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="275, 75" Click="BtnIngresar_Click"/>
+        <Button Name="btnSalir" Content="Salir" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="400,0,300,75" Width="95" Click="BtnSalir_Click"/>
     </Grid>
 </Window>
