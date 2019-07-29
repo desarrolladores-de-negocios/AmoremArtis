@@ -17,7 +17,7 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid Background="#F12C20" Grid.Row="0">
-            <TextBlock Text="Quitar maestro de solfeo" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
+            <TextBlock Text="Agregar maestro a solfeo" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
             <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#F12C20" BorderBrush="#F12C20" Margin="0,0,10,0" Click="Salir_Click"/>
         </Grid>
         <StackPanel Orientation="Vertical" Grid.Row="2">
@@ -34,7 +34,7 @@
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Row="5">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="btnQuitar" Content="Quitar" Margin="0,10,0,0" Click="BtnQuitar_Click"/>
+                <Button x:Name="btnAgregar" Content="Quitar" Margin="0,10,0,0" Click="BtnAgregar_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>

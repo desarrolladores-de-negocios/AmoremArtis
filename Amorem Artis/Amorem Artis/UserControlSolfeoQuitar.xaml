@@ -17,7 +17,7 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid Background="#F12C20" Grid.Row="0">
-            <TextBlock Text="Quitar maestro de solfeo" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
+            <TextBlock Text="Quitar maestro de seccion" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
             <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#F12C20" BorderBrush="#F12C20" Margin="0,0,10,0" Click="Salir_Click"/>
         </Grid>
         <StackPanel Orientation="Vertical" Grid.Row="2">
@@ -28,7 +28,7 @@
                 <ComboBox Name="cmbTipo" HorizontalAlignment="Center" Margin="12,13,22,0" VerticalAlignment="Top" Width="170"/>
             </StackPanel>
         </StackPanel>
-        <Label Name="lblSeccion" Content="Solfeo del maestro" Grid.Row="3" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Name="lblSeccion" Content="Secciones del maestro" Grid.Row="3" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20"/>
         <StackPanel Grid.Row="4" HorizontalAlignment="Center">
             <DataGrid Name="dgSecciones" HorizontalAlignment="Right" Height="275" Margin="0,0,0,0" VerticalAlignment="Top" Width="379"/>
         </StackPanel>
