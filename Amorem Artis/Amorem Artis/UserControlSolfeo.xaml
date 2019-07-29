@@ -16,13 +16,13 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid Background="#F12C20" Grid.Row="0">
-            <TextBlock Text="Secciones" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
+            <TextBlock Text="Solfeo" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
             <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#F12C20" BorderBrush="#F12C20" Margin="0,0,10,0" Click="Salir_Click"/>
         </Grid>
         <StackPanel Orientation="Vertical" Grid.Row="2">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="btnAgregarMaestroSeccion" Content="Agregar maestro a seccion" Click="BtnAgregarMaestroSeccion_Click"/>
-                <Button x:Name="btnQuitarMaestroSeccion" Content="Quita maestro de seccion" Margin="10,0,0,0" Click="BtnQuitarMaestroSeccion_Click"/>
+                <Button x:Name="btnAgregarMaestroSolfeo" Content="Agregar maestro a solfeo" Click="BtnAgregarMaestroSolfeo_Click"/>
+                <Button x:Name="btnQuitarMaestroSolfeo" Content="Quita maestro de solfeo" Margin="10,0,0,0" Click="BtnQuitarMaestroSolfeo_Click"/>
             </StackPanel>
         </StackPanel>
         <Grid Grid.Row="3">
@@ -32,7 +32,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="1" Orientation="20,0,20,0">
-                <TextBlock Text="Secciones" HorizontalAlignment="Center" Margin="0,0,0,10" FontSize="22"/>
+                <TextBlock Text="Solfeo" HorizontalAlignment="Center"  Margin="0,0,0,10" FontSize="22"/>
                 <DataGrid x:Name="gridMaestros" Visibility="Visible" VerticalAlignment="Stretch" MinHeight="210"/>
             </StackPanel>
         </Grid>
