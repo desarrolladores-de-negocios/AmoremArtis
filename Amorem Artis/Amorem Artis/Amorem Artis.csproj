@@ -69,6 +69,15 @@
     <Compile Include="UserControlMaestroModificar.xaml.cs">
       <DependentUpon>UserControlMaestroModificar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlPagos.xaml.cs">
+      <DependentUpon>UserControlPagos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlPagosAgregar.xaml.cs">
+      <DependentUpon>UserControlPagosAgregar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlPagosConsultar.xaml.cs">
+      <DependentUpon>UserControlPagosConsultar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlSolfeoAgregar.xaml.cs">
       <DependentUpon>UserControlSolfeoAgregar.xaml</DependentUpon>
     </Compile>
@@ -115,6 +124,18 @@
     <Page Include="UserControlMaestroModificar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlPagos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControlPagosAgregar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControlPagosConsultar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControlSolfeoAgregar.xaml">
       <Generator>MSBuild:Compile</Generator>
