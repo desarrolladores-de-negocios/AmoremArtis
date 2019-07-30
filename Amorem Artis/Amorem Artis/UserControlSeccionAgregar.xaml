@@ -7,17 +7,16 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid VerticalAlignment="Stretch" Background="#EFE2BA">
+    <Grid VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Background="#F12C20" Grid.Row="0">
+        <Grid Grid.Row="0">
             <TextBlock Text="Agregar maestro a seccion" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
             <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#F12C20" BorderBrush="#F12C20" Margin="0,0,10,0" Click="Salir_Click"/>
         </Grid>
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -56,7 +55,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Grid.Row="4">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button x:Name="btnAgregar" Content="Aplicar" Margin="0,20,0,0" Click="BtnAgregar_Click"/>
+                        <Button x:Name="btnAplicar" Content="Aplicar" Margin="0,20,0,0" Click="BtnAplicar_Click"/>
                     </StackPanel>
                 </StackPanel>
             </Grid>

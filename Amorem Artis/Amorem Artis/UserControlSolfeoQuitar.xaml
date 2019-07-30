@@ -7,20 +7,19 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid VerticalAlignment="Stretch" Background="#EFE2BA">
+    <Grid VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <Grid Background="#F12C20" Grid.Row="0">
-            <TextBlock Text="Quitar maestro de seccion" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
+        <Grid Grid.Row="0">
+            <TextBlock Text="Quitar maestro de solfeo" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
             <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#F12C20" BorderBrush="#F12C20" Margin="0,0,10,0" Click="Salir_Click"/>
         </Grid>
-        <StackPanel Orientation="Vertical" Grid.Row="2">
+        <StackPanel Orientation="Vertical" Grid.Row="1">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                 <Label Name="lblIdentidad" Content="Identidad" HorizontalAlignment="Left" Margin="100,10,0,0" VerticalAlignment="Top" FontSize="20"/>
                 <TextBox Name="txtIdentidad" HorizontalAlignment="Left" Height="25" Margin="20,015,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
@@ -28,11 +27,11 @@
                 <ComboBox Name="cmbTipo" HorizontalAlignment="Center" Margin="12,13,22,0" VerticalAlignment="Top" Width="170"/>
             </StackPanel>
         </StackPanel>
-        <Label Name="lblSeccion" Content="Secciones del maestro" Grid.Row="3" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <StackPanel Grid.Row="4" HorizontalAlignment="Center">
+        <Label Name="lblSeccion" Content="Secciones del maestro" Grid.Row="2" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <StackPanel Grid.Row="3" HorizontalAlignment="Center">
             <DataGrid Name="dgSecciones" HorizontalAlignment="Right" Height="275" Margin="0,0,0,0" VerticalAlignment="Top" Width="379"/>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Row="5">
+        <StackPanel Orientation="Vertical" Grid.Row="4">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button x:Name="btnQuitar" Content="Quitar" Margin="0,10,0,0" Click="BtnQuitar_Click"/>
             </StackPanel>
