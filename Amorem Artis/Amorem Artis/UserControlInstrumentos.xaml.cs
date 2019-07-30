@@ -39,6 +39,7 @@ namespace Amorem_Artis
             btnVolver.Visibility = Visibility.Visible;
             btnModificarInstrumento.Visibility = Visibility.Collapsed;
             btnElimarInstrumento.Visibility = Visibility.Collapsed;
+            txtInstrumento.Visibility = Visibility.Visible;
         }
 
 
@@ -59,6 +60,7 @@ namespace Amorem_Artis
             btnVolver.Visibility = Visibility.Visible;
             btnNuevoInstrumento.Visibility = Visibility.Collapsed;
             btnModificarInstrumento.Visibility = Visibility.Collapsed;
+            stkInstrumento.Visibility = Visibility.Visible;
         }
 
         private void BtnVolver_Click(object sender, RoutedEventArgs e)

@@ -32,8 +32,8 @@ namespace Amorem_Artis
 
             var menuCursos = new List<SubItem>();
             menuCursos.Add(new SubItem("Instrumentos", new UserControlInstrumentos()));
-            menuCursos.Add(new SubItem("Secciones"));
-            menuCursos.Add(new SubItem("Solfeo"));
+            menuCursos.Add(new SubItem("Secciones", new UserControlSeccion()));
+            menuCursos.Add(new SubItem("Solfeo", new UserControlSolfeo()));
             var item1 = new ItemMenu("Cursos", menuCursos, PackIconKind.Piano);
 
             var menuAlumnos = new List<SubItem>();
@@ -82,6 +82,7 @@ namespace Amorem_Artis
 
             if (screen != null)
             {
+                GridPrincipal.Children.Clear();
                 GridPrincipal.Children.Add(screen);
             }
         }
