@@ -97,7 +97,7 @@ namespace Amorem_Artis
             }
             else
             {
-                //No hace nada
+               //No hace absulutamente nada 
             }
         }
 
