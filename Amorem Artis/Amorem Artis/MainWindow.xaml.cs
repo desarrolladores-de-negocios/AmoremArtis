@@ -86,5 +86,31 @@ namespace Amorem_Artis
                 GridPrincipal.Children.Add(screen);
             }
         }
+
+        private void BtnCerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            Login log = new Login();
+            if (MessageBox.Show("Realmente desea cerrar sesion?", "Consulta", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                log.Show();
+                this.Close();
+            }
+            else
+            {
+                //No hace nada
+            }
+        }
+
+        private void BtnSalir_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Realmente desea salir?", "Consulta", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                App.Current.Shutdown();
+            }
+            else
+            {
+                //No hace nada
+            }
+        }
     }
 }

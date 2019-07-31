@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Amorem_Artis"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Menu" Height="620" Width="1080" WindowStartupLocation="CenterScreen" >
+        Title="Menu" Height="620" Width="1080" WindowStartupLocation="CenterScreen"  ResizeMode="NoResize" WindowStyle="None" >
     <Grid Background="#EFE2BA">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -21,7 +21,12 @@
         <materialDesign:ColorZone Mode="PrimaryMid" Grid.ColumnSpan="2" HorizontalAlignment="Stretch">
             <Grid>
                 <TextBlock Text="Menu" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" HorizontalAlignment="Right" Margin="10"/>
+                <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10" HorizontalAlignment="Right">
+                    <StackPanel Width="150">
+                        <Button x:Name="BtnCerrarSesion" Content="Cerrar Sesion" Click="BtnCerrarSesion_Click"/>
+                        <Button x:Name="BtnSalir" Content="Salir" Click="BtnSalir_Click"/>
+                    </StackPanel>
+                </materialDesign:PopupBox>
             </Grid>
         </materialDesign:ColorZone>
         <Grid HorizontalAlignment="Stretch" Grid.Row="1" Background="{StaticResource PrimaryHueMidBrush}">
