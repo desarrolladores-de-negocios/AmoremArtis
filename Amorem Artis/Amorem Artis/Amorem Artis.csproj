@@ -65,6 +65,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ItemMenu.cs" />
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SubItem.cs" />
     <Compile Include="UserControlInstrumentos.xaml.cs">
       <DependentUpon>UserControlInstrumentos.xaml</DependentUpon>
@@ -78,6 +81,10 @@
     <Compile Include="UserControlSolfeo.xaml.cs">
       <DependentUpon>UserControlSolfeo.xaml</DependentUpon>
     </Compile>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -134,7 +141,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Recursos\gui.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="icons8-music-80.ico" />
   </ItemGroup>

@@ -11,6 +11,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
@@ -28,16 +29,27 @@
                 <RowDefinition Height="70"/>
                 <RowDefinition Height="326*"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Background="#F12C20" Height="70" VerticalAlignment="Top" Margin="10,0,10,0"/>
-            <TextBlock Name="dateText" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="White" FontStyle="Italic"/>
+            <Grid Grid.Row="0" Background="#F12C20" Height="70" Margin="10,0,10,0" >
+                <StackPanel VerticalAlignment="Center" Margin="30,0,0,0" Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="User" Foreground="White" Width="30" Height="30"/>
+                    <TextBlock Text="Usuario" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" Margin="10,0,0,0" Foreground="White"/>
+                </StackPanel>
+            </Grid>
 
+           
             <ScrollViewer HorizontalAlignment="Stretch" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1">
                 <StackPanel x:Name="Menu" Margin="10"/>
             </ScrollViewer>
         </Grid>
-
+        <Image Source="Recursos/Logo.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="400" Grid.Row="1" Grid.Column="1"/>
         <Grid x:Name="GridPrincipal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" >
-            <Image Source="Recursos/Logo.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="400"/>
         </Grid>
+        <Grid Grid.Column="2" Grid.Row="2" Background="#1A237E">
+            <TextBlock Name="dateText" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" Foreground="White" FontStyle="Italic" Margin="0,0,20,0"/>
+
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="2" Background="#1A237E"/>
+
     </Grid>
 </Window>
