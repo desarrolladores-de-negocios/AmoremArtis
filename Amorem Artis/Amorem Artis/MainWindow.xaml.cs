@@ -38,23 +38,19 @@ namespace Amorem_Artis
 
             var menuAlumnos = new List<SubItem>();
             menuAlumnos.Add(new SubItem("Alumno", new UserControlAlumno()));
-            menuAlumnos.Add(new SubItem("Secciones"));
-            menuAlumnos.Add(new SubItem("Padres"));
-            menuAlumnos.Add(new SubItem("Solfeo"));
-            menuAlumnos.Add(new SubItem("Pagos"));
+            menuAlumnos.Add(new SubItem("Clase", new UserControlClase()));
+            menuAlumnos.Add(new SubItem("Padres", new  UserControlPadres()));
+            menuAlumnos.Add(new SubItem("Pagos", new UserControlPagosAlumno()));
             var item2 = new ItemMenu("Alumnos", menuAlumnos, PackIconKind.Person);
 
             var menuMaestros = new List<SubItem>();
-            menuMaestros.Add(new SubItem("Maestros", new UserControlInstrumentos()));
-            menuMaestros.Add(new SubItem("Secciones"));
-            menuMaestros.Add(new SubItem("Solfeo"));
-            menuMaestros.Add(new SubItem("Pagos"));
+            menuMaestros.Add(new SubItem("Maestros", new UserControlMaestros()));
+            menuMaestros.Add(new SubItem("Clase", new UserControlClaseMaestro()));
+            menuMaestros.Add(new SubItem("Pagos", new UserControlPagosMaestro()));
             var item3 = new ItemMenu("Maestros", menuMaestros, PackIconKind.Teacher);
 
             var menuUsuarios = new List<SubItem>();
-            menuUsuarios.Add(new SubItem("Ver Usuarios", new UserControlInstrumentos()));
-            menuUsuarios.Add(new SubItem("Agregar Usuario"));
-            menuUsuarios.Add(new SubItem("Quitar Usuario"));
+            menuUsuarios.Add(new SubItem("Usuario", new UserControlUsuarios()));
             var item4 = new ItemMenu("Usuarios", menuUsuarios, PackIconKind.User);
 
             Menu.Children.Add(new UserControlMenuItem(item1, this));
