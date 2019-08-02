@@ -32,6 +32,7 @@ namespace Amorem_Artis
 
         private void BtnNuevaSeccion_Click(object sender, RoutedEventArgs e)
         {
+            btnNuevaSeccion.Visibility = Visibility.Collapsed;
             stkSeccion.Visibility = Visibility.Visible;
             btnAgregar.Visibility = Visibility.Visible;
             btnVolver.Visibility = Visibility.Visible;
@@ -44,7 +45,7 @@ namespace Amorem_Artis
 
         private void BtnModificarSeccion_Click(object sender, RoutedEventArgs e)
         {
-
+            btnModificarSeccion.Visibility = Visibility.Collapsed;
             stkSeccion.Visibility = Visibility.Visible;
             btnModificar.Visibility = Visibility.Visible;
             btnVolver.Visibility = Visibility.Visible;
@@ -57,6 +58,7 @@ namespace Amorem_Artis
 
         private void BtnElimarSeccion_Click(object sender, RoutedEventArgs e)
         {
+            btnElimarSeccion.Visibility = Visibility.Collapsed;
             stkSeccion.Visibility = Visibility.Visible;
             btnEliminar.Visibility = Visibility.Visible;
             btnVolver.Visibility = Visibility.Visible;

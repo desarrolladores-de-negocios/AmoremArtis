@@ -27,6 +27,7 @@ namespace Amorem_Artis
 
         private void BtnModificarSolfeo_Click(object sender, RoutedEventArgs e)
         {
+            btnModificarSolfeo.Visibility = Visibility.Collapsed;
             stkSolfeo.Visibility = Visibility.Visible;
             btnModificar.Visibility = Visibility.Visible;
             btnVolver.Visibility = Visibility.Visible;
@@ -36,6 +37,7 @@ namespace Amorem_Artis
 
         private void BtnElimarSolfeo_Click(object sender, RoutedEventArgs e)
         {
+            btnElimarSolfeo.Visibility = Visibility.Collapsed;
             stkSolfeo.Visibility = Visibility.Visible;
             btnEliminar.Visibility = Visibility.Visible;
             btnVolver.Visibility = Visibility.Visible;
@@ -45,6 +47,7 @@ namespace Amorem_Artis
 
         private void BtnNuevoSolfeo_Click(object sender, RoutedEventArgs e)
         {
+            btnNuevoSolfeo.Visibility = Visibility.Collapsed;
             stkSolfeo.Visibility = Visibility.Visible;
             btnAgregar.Visibility = Visibility.Visible;
             btnVolver.Visibility = Visibility.Visible;

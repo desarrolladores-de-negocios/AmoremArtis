@@ -31,6 +31,7 @@ namespace Amorem_Artis
 
         private void BtnNuevoMaestro_Click(object sender, RoutedEventArgs e)
         {
+            btnNuevoMaestro.Visibility = Visibility.Collapsed;
             GridDatosMaestro.Visibility = Visibility.Visible;
             btnAgregar.Visibility = Visibility.Visible;
             btnVolver.Visibility = Visibility.Visible;
@@ -42,6 +43,7 @@ namespace Amorem_Artis
 
         private void BtnModificarMaestro_Click(object sender, RoutedEventArgs e)
         {
+            btnModificarMaestro.Visibility = Visibility.Collapsed;
             DataGridMaestros.Visibility = Visibility.Collapsed;
             GridDatosMaestro.Visibility = Visibility.Visible;
             btnModificar.Visibility = Visibility.Visible;
@@ -52,6 +54,7 @@ namespace Amorem_Artis
 
         private void BtnElimarMaestro_Click(object sender, RoutedEventArgs e)
         {
+            btnElimarMaestro.Visibility = Visibility.Collapsed;
             txtMaestro.Visibility = Visibility.Visible;
             ComboMaestro.Visibility = Visibility.Visible;
             btnEliminar.Visibility = Visibility.Visible;

@@ -31,6 +31,7 @@ namespace Amorem_Artis
 
         private void BtnNuevoPadre_Click(object sender, RoutedEventArgs e)
         {
+            btnNuevoPadre.Visibility = Visibility.Collapsed;
             GridDatosPadre.Visibility = Visibility.Visible;
             btnAgregar.Visibility = Visibility.Visible;
             btnVolver.Visibility = Visibility.Visible;
@@ -42,6 +43,7 @@ namespace Amorem_Artis
 
         private void BtnModificarPadre_Click(object sender, RoutedEventArgs e)
         {
+            btnModificarPadre.Visibility = Visibility.Collapsed;
             DataGridPadres.Visibility = Visibility.Collapsed;
             GridDatosPadre.Visibility = Visibility.Visible;
             btnModificar.Visibility = Visibility.Visible;
@@ -52,6 +54,7 @@ namespace Amorem_Artis
 
         private void BtnElimarPadre_Click(object sender, RoutedEventArgs e)
         {
+            btnElimarPadre.Visibility = Visibility.Collapsed;
             txtPadre.Visibility = Visibility.Visible;
             ComboPadre.Visibility = Visibility.Visible;
             btnEliminar.Visibility = Visibility.Visible;

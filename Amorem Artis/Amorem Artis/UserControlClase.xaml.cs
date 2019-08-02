@@ -27,6 +27,8 @@ namespace Amorem_Artis
 
         private void BtnNuevoClase_Click(object sender, RoutedEventArgs e)
         {
+            btnElimarClase.Visibility = Visibility.Collapsed;
+            btnNuevoClase.Visibility = Visibility.Collapsed;
             stkbusqueda.Visibility = Visibility.Collapsed;
             gridCla.Visibility = Visibility.Visible;
             dataGridClase.Visibility = Visibility.Collapsed;
@@ -36,6 +38,8 @@ namespace Amorem_Artis
 
         private void BtnVolver_Click(object sender, RoutedEventArgs e)
         {
+            btnElimarClase.Visibility = Visibility.Visible;
+            btnNuevoClase.Visibility = Visibility.Visible;
             gridCla.Visibility = Visibility.Collapsed;
             dataGridClase.Visibility = Visibility.Visible;
             btnAgregar.Visibility = Visibility.Collapsed;
@@ -51,6 +55,8 @@ namespace Amorem_Artis
 
         private void BtnElimarClase_Click(object sender, RoutedEventArgs e)
         {
+            btnNuevoClase.Visibility = Visibility.Collapsed;
+            btnElimarClase.Visibility = Visibility.Collapsed;
             stkbusqueda.Visibility = Visibility.Collapsed;
             gridCla.Visibility = Visibility.Visible;
             dataGridClase.Visibility = Visibility.Collapsed;

@@ -49,6 +49,7 @@ namespace Amorem_Artis
 
         private void BtnNuevoUsuario_Click(object sender, RoutedEventArgs e)
         {
+            btnNuevoUsuario.Visibility = Visibility.Collapsed;
             datauser.Visibility = Visibility.Visible;
             GridDetalle.Visibility = Visibility.Visible;
             stkUsuario.Visibility = Visibility.Visible;
@@ -62,6 +63,7 @@ namespace Amorem_Artis
 
         private void BtnModificarUsuario_Click(object sender, RoutedEventArgs e)
         {
+            btnModificarUsuario.Visibility = Visibility.Collapsed;
             datauser.Visibility = Visibility.Visible;
             GridDetalle.Visibility = Visibility.Visible;
             stknueva.Visibility = Visibility.Visible;
@@ -75,6 +77,7 @@ namespace Amorem_Artis
 
         private void BtnElimarUsuario_Click(object sender, RoutedEventArgs e)
         {
+            btnElimarUsuario.Visibility = Visibility.Collapsed;
             datauser.Visibility = Visibility.Collapsed;
             btnEliminar.Visibility = Visibility.Visible;
             btnVolver.Visibility = Visibility.Visible;
