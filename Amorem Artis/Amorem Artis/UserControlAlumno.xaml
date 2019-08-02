@@ -15,9 +15,9 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <Grid Background="#F12C20" Grid.Row="0">
+        <Grid Background="#9b0000" Grid.Row="0">
             <TextBlock Text="Alumno" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
-            <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#F12C20" BorderBrush="#F12C20" Margin="0,0,10,0" Click="Salir_Click" />
+            <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#9b0000" BorderBrush="#9b0000" Margin="0,0,10,0" Click="Salir_Click" />
         </Grid>
         <Grid Grid.Row="3" x:Name="GridDatosAlumno" Visibility="Collapsed">
             <Grid.ColumnDefinitions>

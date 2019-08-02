@@ -31,7 +31,7 @@ namespace Amorem_Artis
             btnNuevoClase.Visibility = Visibility.Collapsed;
             stkbusqueda.Visibility = Visibility.Collapsed;
             gridCla.Visibility = Visibility.Visible;
-            dataGridClase.Visibility = Visibility.Collapsed;
+            //dataGridClase.Visibility = Visibility.Collapsed;
             btnAgregar.Visibility = Visibility.Visible;
             btnVolver.Visibility = Visibility.Visible;
         }
@@ -41,7 +41,7 @@ namespace Amorem_Artis
             btnElimarClase.Visibility = Visibility.Visible;
             btnNuevoClase.Visibility = Visibility.Visible;
             gridCla.Visibility = Visibility.Collapsed;
-            dataGridClase.Visibility = Visibility.Visible;
+          //  dataGridClase.Visibility = Visibility.Visible;
             btnAgregar.Visibility = Visibility.Collapsed;
             btnVolver.Visibility = Visibility.Collapsed;
             btnEliminar.Visibility = Visibility.Collapsed;
@@ -59,7 +59,7 @@ namespace Amorem_Artis
             btnElimarClase.Visibility = Visibility.Collapsed;
             stkbusqueda.Visibility = Visibility.Collapsed;
             gridCla.Visibility = Visibility.Visible;
-            dataGridClase.Visibility = Visibility.Collapsed;
+            //dataGridClase.Visibility = Visibility.Collapsed;
             btnEliminar.Visibility = Visibility.Visible;
             btnVolver.Visibility = Visibility.Visible;
         }

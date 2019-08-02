@@ -20,7 +20,7 @@
 
         <materialDesign:ColorZone Mode="PrimaryMid" Grid.ColumnSpan="2" HorizontalAlignment="Stretch">
             <Grid>
-                <TextBlock Text="Menu" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Text="MENU" FontSize="30"  VerticalAlignment="Center" HorizontalAlignment="Center" LineHeight="1" TextDecorations="{x:Null}"/>
                 <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10" HorizontalAlignment="Right">
                     <StackPanel Width="150">
                         <Button x:Name="BtnCerrarSesion" Content="Cerrar Sesion" Click="BtnCerrarSesion_Click"/>
@@ -34,7 +34,7 @@
                 <RowDefinition Height="70"/>
                 <RowDefinition Height="326*"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Background="#F12C20" Height="70" Margin="10,0,10,0" >
+            <Grid Grid.Row="0" Background="#FFD89617" Height="70" Margin="10,0,10,0" >
                 <StackPanel VerticalAlignment="Center" Margin="30,0,0,0" Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="User" Foreground="White" Width="30" Height="30"/>
                     <TextBlock Text="Usuario" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" Margin="10,0,0,0" Foreground="White"/>

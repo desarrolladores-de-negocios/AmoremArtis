@@ -99,8 +99,20 @@
     <Compile Include="UserControlSeccion.xaml.cs">
       <DependentUpon>UserControlSeccion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlSeccionAlumno.xaml.cs">
+      <DependentUpon>UserControlSeccionAlumno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlSeccionMaestro.xaml.cs">
+      <DependentUpon>UserControlSeccionMaestro.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlSolfeo.xaml.cs">
       <DependentUpon>UserControlSolfeo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlSolfeoAlumno.xaml.cs">
+      <DependentUpon>UserControlSolfeoAlumno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlSolfeoMaestro.xaml.cs">
+      <DependentUpon>UserControlSolfeoMaestro.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlUsuarios.xaml.cs">
       <DependentUpon>UserControlUsuarios.xaml</DependentUpon>
@@ -161,7 +173,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControlSeccionAlumno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlSeccionMaestro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControlSolfeo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlSolfeoAlumno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlSolfeoMaestro.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

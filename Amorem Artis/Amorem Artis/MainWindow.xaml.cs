@@ -47,7 +47,7 @@ namespace Amorem_Artis
             var menuMaestros = new List<SubItem>();
             menuMaestros.Add(new SubItem("Maestros", new UserControlMaestros()));
             menuMaestros.Add(new SubItem("Seccion", new UserControlClaseMaestro()));
-            menuMaestros.Add(new SubItem("Solfeo", new UserControlClaseMaestro()));
+            menuMaestros.Add(new SubItem("Solfeo", new UserControlSolfeoMaestro()));
             menuMaestros.Add(new SubItem("Pagos", new UserControlPagosMaestro()));
             var item3 = new ItemMenu("Maestros", menuMaestros, PackIconKind.Teacher);
 
