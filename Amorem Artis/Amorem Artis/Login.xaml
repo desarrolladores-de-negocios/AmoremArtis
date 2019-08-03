@@ -8,15 +8,15 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="Login" Height="300" Width="600" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" Background="Transparent" WindowStartupLocation="CenterScreen">
     <Grid>
-                  
-        <Rectangle RadiusY="8" RadiusX="8" Fill="White"/>
+
+        <Rectangle RadiusY="8" RadiusX="8" Fill="#e8eaf6"/>
         <Image Source="Recursos/gui.jpg" Margin="310,0,0,0" Stretch="UniformToFill"/>
         <Rectangle Margin="310,0,0,0">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#CC2B598F" Offset="1"/>
                     <GradientStop Color="#CC5C46EA"/>
-                    <GradientStop Color="#CCB83C28" Offset="0.566"/>
+                    <GradientStop Color="#CC000000" Offset="0.566"/>
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>

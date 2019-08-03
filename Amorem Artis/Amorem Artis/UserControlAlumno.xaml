@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Amorem_Artis"
               mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid VerticalAlignment="Stretch"  Background="#EFE2BA">
+    <Grid VerticalAlignment="Stretch"  Background="#e8eaf6">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="20"/>
@@ -15,9 +15,9 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <Grid Background="#9b0000" Grid.Row="0">
+        <Grid Background="#1a237e" Grid.Row="0">
             <TextBlock Text="Alumno" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
-            <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#9b0000" BorderBrush="#9b0000" Margin="0,0,10,0" Click="Salir_Click" />
+            <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#1a237e" BorderBrush="#1a237e" Margin="0,0,10,0" Click="Salir_Click" />
         </Grid>
         <Grid Grid.Row="3" x:Name="GridDatosAlumno" Visibility="Collapsed">
             <Grid.ColumnDefinitions>

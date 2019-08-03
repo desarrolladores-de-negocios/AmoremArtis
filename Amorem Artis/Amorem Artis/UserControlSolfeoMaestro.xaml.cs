@@ -37,7 +37,12 @@ namespace Amorem_Artis
 
         private void BtnEliminarDeSolfeo_Click(object sender, RoutedEventArgs e)
         {
-
+            dataGridBusqueda.Visibility = Visibility.Collapsed;
+            btnAgregarDeSolfeo.Visibility = Visibility.Collapsed;
+            btnEliminar.Visibility = Visibility.Visible;
+            GridDetalles.Visibility = Visibility.Visible;
+            btnVolver.Visibility = Visibility.Visible;
+            stkbusqueda.Visibility = Visibility.Collapsed;
         }
 
         private void BtnVolver_Click(object sender, RoutedEventArgs e)

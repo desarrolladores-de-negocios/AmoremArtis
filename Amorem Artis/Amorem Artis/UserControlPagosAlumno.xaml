@@ -7,7 +7,7 @@
               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid VerticalAlignment="Stretch"  Background="#EFE2BA">
+    <Grid VerticalAlignment="Stretch"  Background="#e8eaf6">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
@@ -16,9 +16,9 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <Grid Background="#9b0000" Grid.Row="0">
+        <Grid Background="#1a237e" Grid.Row="0">
             <TextBlock Text="Pagos" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
-            <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#9b0000" BorderBrush="#9b0000" Margin="0,0,10,0" Click="Salir_Click" />
+            <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#1a237e" BorderBrush="#1a237e" Margin="0,0,10,0" Click="Salir_Click" />
         </Grid>
         <StackPanel Orientation="Vertical" Grid.Row="2">
             <StackPanel x:Name="stkBusqueda" Orientation="Horizontal" HorizontalAlignment="Center">

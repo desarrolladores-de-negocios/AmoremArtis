@@ -24,5 +24,38 @@ namespace Amorem_Artis
         {
             InitializeComponent();
         }
+        private void BtnAgregarDeSeccion_Click(object sender, RoutedEventArgs e)
+        {
+            dataGridBusqueda.Visibility = Visibility.Collapsed;
+            btnEliminarDeSeccion.Visibility = Visibility.Collapsed;
+            btnAgregar.Visibility = Visibility.Visible;
+            GridDetalles.Visibility = Visibility.Visible;
+            btnVolver.Visibility = Visibility.Visible;
+            stkbusqueda.Visibility = Visibility.Collapsed;
+        }
+
+        private void BtnEliminarDeSeccion_Click(object sender, RoutedEventArgs e)
+        {
+            dataGridBusqueda.Visibility = Visibility.Collapsed;
+            btnAgregarDeSeccion.Visibility = Visibility.Collapsed;
+            btnEliminar.Visibility = Visibility.Visible;
+            GridDetalles.Visibility = Visibility.Visible;
+            btnVolver.Visibility = Visibility.Visible;
+            stkbusqueda.Visibility = Visibility.Collapsed;
+        }
+
+        private void BtnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            dataGridBusqueda.Visibility = Visibility.Visible;
+            btnEliminarDeSeccion.Visibility = Visibility.Visible;
+            btnAgregar.Visibility = Visibility.Collapsed;
+            GridDetalles.Visibility = Visibility.Collapsed;
+            btnVolver.Visibility = Visibility.Collapsed;
+            stkbusqueda.Visibility = Visibility.Visible;
+        }
+        private void Salir_Click(object sender, RoutedEventArgs e)
+        {
+            (this.Parent as Panel).Children.Remove(this);
+        }
     }
 }

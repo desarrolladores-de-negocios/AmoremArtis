@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
  mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid VerticalAlignment="Stretch"  Background="#EFE2BA">
+    <Grid VerticalAlignment="Stretch"  Background="#e8eaf6">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="20"/>
@@ -20,12 +20,12 @@
             <Button x:Name="btnBuscar" Content="Buscar"/>
             <TextBlock Text="Solfeo" FontSize="20" VerticalAlignment="Center" Margin="30,0,0,0"/>
             <TextBox x:Name="txtSolfeo" Width="150" VerticalAlignment="Center"/>
-            <TextBlock Text="Alumno" FontSize="20" VerticalAlignment="Center" Margin="30,0,0,0"/>
+            <TextBlock Text="Maestro" FontSize="20" VerticalAlignment="Center" Margin="30,0,0,0"/>
             <TextBox x:Name="txtAlumno" Width="150" VerticalAlignment="Center"/>
         </StackPanel>
-        <Grid Background="#9b0000" Grid.Row="0">
+        <Grid Background="#1a237e" Grid.Row="0">
             <TextBlock Text="Solfeo" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
-            <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#9b0000" BorderBrush="#9b0000" Margin="0,9,10,9" Click="Salir_Click" />
+            <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#1a237e" BorderBrush="#1a237e" Margin="0,9,10,9" Click="Salir_Click" />
         </Grid>
         <StackPanel Orientation="Vertical" Grid.Row="3"  VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -43,8 +43,8 @@
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Vertical" Margin="20" HorizontalAlignment="Center" >
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,30">
-                    <TextBlock Text="Alumno"  FontSize="20"/>
-                    <ComboBox x:Name="cmbAlumno" Width="150" FontSize="20"/>
+                    <TextBlock Text="Maestro"  FontSize="20"/>
+                    <ComboBox x:Name="cmbMaestro" Width="150" FontSize="20"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Solfeo  "  FontSize="20"/>
@@ -52,7 +52,7 @@
                 </StackPanel>
             </StackPanel>
 
-            <DataGrid x:Name="dataSolfeo" Grid.Column="1" Margin="10" />
+            <DataGrid x:Name="dataSolfeo" Grid.Column="1" Margin="0,0,10,0" />
 
         </Grid>
         

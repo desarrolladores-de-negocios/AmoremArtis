@@ -4,9 +4,64 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Amorem_Artis"
-             mc:Ignorable="d" 
+             
+ mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+    <Grid VerticalAlignment="Stretch"  Background="#e8eaf6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="stkbusqueda" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="btnBuscar" Content="Buscar"/>
+            <TextBlock Text="Solfeo" FontSize="20" VerticalAlignment="Center" Margin="30,0,0,0"/>
+            <TextBox x:Name="txtSolfeo" Width="150" VerticalAlignment="Center"/>
+            <TextBlock Text="Alumno" FontSize="20" VerticalAlignment="Center" Margin="30,0,0,0"/>
+            <TextBox x:Name="txtAlumno" Width="150" VerticalAlignment="Center"/>
+        </StackPanel>
+        <Grid Background="#1a237e" Grid.Row="0">
+            <TextBlock Text="Solfeo" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
+            <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#1a237e" BorderBrush="#1a237e" Margin="0,9,10,9" Click="Salir_Click" />
+        </Grid>
+        <StackPanel Orientation="Vertical" Grid.Row="3"  VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btnAgregarDeSolfeo" Content="Agregar a solfeo"  Visibility="Visible"  Click="BtnAgregarDeSolfeo_Click" />
+                <Button x:Name="btnEliminarDeSolfeo" Content="Eliminar de solfeo"  Margin="10,0,0,0"  Visibility="Visible" Click="BtnEliminarDeSolfeo_Click" />
+            </StackPanel>
+        </StackPanel>
+
+        <DataGrid x:Name="dataGridBusqueda" Margin="20,0,20,0"  Visibility="Visible" VerticalAlignment="Stretch" Grid.Row="4"/>
+
+        <Grid x:Name="GridDetalles" Grid.Row="4" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical" Margin="20" HorizontalAlignment="Center" >
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,30">
+                    <TextBlock Text="Alumno"  FontSize="20"/>
+                    <ComboBox x:Name="cmbAlumno" Width="150" FontSize="20"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Solfeo  "  FontSize="20"/>
+                    <ComboBox x:Name="cmbSolfeo" Width="150" FontSize="20"/>
+                </StackPanel>
+            </StackPanel>
+
+            <DataGrid x:Name="dataSolfeo" Grid.Column="1"  Margin="0,0,10,0"  />
+
+        </Grid>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5">
+            <Button x:Name="btnAgregar" Content="Agregar" Margin="10,0,0,0" Visibility="Collapsed"/>
+            <Button x:Name="btnEliminar" Content="Eliminar" Margin="10,0,0,0" Visibility="Collapsed"  />
+            <Button x:Name="btnVolver" Content="Volver" Margin="10,0,0,0" Visibility="Collapsed" Click="BtnVolver_Click" />
+        </StackPanel>
     </Grid>
 </UserControl>

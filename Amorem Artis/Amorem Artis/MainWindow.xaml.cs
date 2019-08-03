@@ -38,15 +38,15 @@ namespace Amorem_Artis
 
             var menuAlumnos = new List<SubItem>();
             menuAlumnos.Add(new SubItem("Alumno", new UserControlAlumno()));
-            menuAlumnos.Add(new SubItem("Seccion", new UserControlClase()));
-            menuAlumnos.Add(new SubItem("Solfeo", new UserControlClase()));
+            menuAlumnos.Add(new SubItem("Seccion", new UserControlSeccionAlumno()));
+            menuAlumnos.Add(new SubItem("Solfeo", new UserControlSolfeoAlumno()));
             menuAlumnos.Add(new SubItem("Padres", new  UserControlPadres()));
             menuAlumnos.Add(new SubItem("Pagos", new UserControlPagosAlumno()));
             var item2 = new ItemMenu("Alumnos", menuAlumnos, PackIconKind.Person);
 
             var menuMaestros = new List<SubItem>();
             menuMaestros.Add(new SubItem("Maestros", new UserControlMaestros()));
-            menuMaestros.Add(new SubItem("Seccion", new UserControlClaseMaestro()));
+            menuMaestros.Add(new SubItem("Seccion", new UserControlSeccionMaestro()));
             menuMaestros.Add(new SubItem("Solfeo", new UserControlSolfeoMaestro()));
             menuMaestros.Add(new SubItem("Pagos", new UserControlPagosMaestro()));
             var item3 = new ItemMenu("Maestros", menuMaestros, PackIconKind.Teacher);
