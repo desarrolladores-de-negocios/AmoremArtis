@@ -38,15 +38,19 @@ namespace Amorem_Artis
             btnModificarMaestro.Visibility = Visibility.Collapsed;
             btnElimarMaestro.Visibility = Visibility.Collapsed;
             DataGridMaestros.Visibility = Visibility.Collapsed;
+            stkMaestros.Visibility = Visibility.Collapsed;
+            stkNuevoMaestro.Visibility = Visibility.Visible;
+            dgNuevoMaestro.Visibility = Visibility.Visible;
         }
 
 
         private void BtnModificarMaestro_Click(object sender, RoutedEventArgs e)
         {
+            stkTabControlMaestro.Visibility = Visibility.Visible;
+            stkModificarMaestros.Visibility = Visibility.Visible;
+            stkMaestros.Visibility = Visibility.Collapsed;
             btnModificarMaestro.Visibility = Visibility.Collapsed;
-            DataGridMaestros.Visibility = Visibility.Collapsed;
-            GridDatosMaestro.Visibility = Visibility.Visible;
-            btnModificar.Visibility = Visibility.Visible;
+            btnModificar.Visibility = Visibility.Collapsed;
             btnVolver.Visibility = Visibility.Visible;
             btnElimarMaestro.Visibility = Visibility.Collapsed;
             btnNuevoMaestro.Visibility = Visibility.Collapsed;
@@ -61,14 +65,14 @@ namespace Amorem_Artis
             btnVolver.Visibility = Visibility.Visible;
             btnNuevoMaestro.Visibility = Visibility.Collapsed;
             btnModificarMaestro.Visibility = Visibility.Collapsed;
-            GridDatosMaestro.Visibility = Visibility.Visible;
         }
 
         private void BtnVolver_Click(object sender, RoutedEventArgs e)
         {
+            stkTabControlMaestro.Visibility = Visibility.Collapsed;
+            stkModificarMaestros.Visibility = Visibility.Collapsed;
             txtMaestro.Visibility = Visibility.Collapsed;
             ComboMaestro.Visibility = Visibility.Collapsed;
-            GridDatosMaestro.Visibility = Visibility.Collapsed;
             btnAgregar.Visibility = Visibility.Collapsed;
             btnModificar.Visibility = Visibility.Collapsed;
             btnEliminar.Visibility = Visibility.Collapsed;
@@ -76,7 +80,10 @@ namespace Amorem_Artis
             btnNuevoMaestro.Visibility = Visibility.Visible;
             btnModificarMaestro.Visibility = Visibility.Visible;
             btnElimarMaestro.Visibility = Visibility.Visible;
+            stkMaestros.Visibility = Visibility.Visible;
             DataGridMaestros.Visibility = Visibility.Visible;
+            stkNuevoMaestro.Visibility = Visibility.Collapsed;
+            dgNuevoMaestro.Visibility = Visibility.Collapsed;
         }
     }
 }
