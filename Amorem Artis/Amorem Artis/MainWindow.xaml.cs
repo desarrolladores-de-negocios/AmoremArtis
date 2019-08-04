@@ -38,7 +38,7 @@ namespace Amorem_Artis
 
             var menuAlumnos = new List<SubItem>();
             menuAlumnos.Add(new SubItem("Alumno", new UserControlAlumno()));
-            menuAlumnos.Add(new SubItem("Seccion", new UserControlSeccionAlumno()));
+            menuAlumnos.Add(new SubItem("Sección", new UserControlSeccionAlumno()));
             menuAlumnos.Add(new SubItem("Solfeo", new UserControlSolfeoAlumno()));
             menuAlumnos.Add(new SubItem("Padres", new  UserControlPadres()));
             menuAlumnos.Add(new SubItem("Pagos", new UserControlPagosAlumno()));
@@ -46,7 +46,7 @@ namespace Amorem_Artis
 
             var menuMaestros = new List<SubItem>();
             menuMaestros.Add(new SubItem("Maestros", new UserControlMaestros()));
-            menuMaestros.Add(new SubItem("Seccion", new UserControlSeccionMaestro()));
+            menuMaestros.Add(new SubItem("Sección", new UserControlSeccionMaestro()));
             menuMaestros.Add(new SubItem("Solfeo", new UserControlSolfeoMaestro()));
             menuMaestros.Add(new SubItem("Pagos", new UserControlPagosMaestro()));
             var item3 = new ItemMenu("Maestros", menuMaestros, PackIconKind.Teacher);
@@ -88,7 +88,7 @@ namespace Amorem_Artis
         private void BtnCerrarSesion_Click(object sender, RoutedEventArgs e)
         {
             Login log = new Login();
-            if (MessageBox.Show("Realmente desea cerrar sesion?", "Consulta", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Realmente desea cerrar sesión?", "Consulta", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 log.Show();
                 this.Close();
