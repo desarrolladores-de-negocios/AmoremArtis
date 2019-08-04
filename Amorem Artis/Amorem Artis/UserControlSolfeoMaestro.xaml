@@ -19,13 +19,13 @@
         <StackPanel x:Name="stkbusqueda" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button x:Name="btnBuscar" Content="Buscar"/>
             <TextBlock Text="Solfeo" FontSize="20" VerticalAlignment="Center" Margin="30,0,0,0"/>
-            <TextBox x:Name="txtSolfeo" Width="150" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtSolfeo" Width="150" VerticalAlignment="Center" Margin="15,0,0,0"/>
             <TextBlock Text="Maestro" FontSize="20" VerticalAlignment="Center" Margin="30,0,0,0"/>
-            <TextBox x:Name="txtAlumno" Width="150" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtAlumno" Width="150" VerticalAlignment="Center" Margin="15,0,0,0"/>
         </StackPanel>
         <Grid Background="#1a237e" Grid.Row="0">
             <TextBlock Text="Solfeo" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
-            <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#1a237e" BorderBrush="#1a237e" Margin="0,9,10,9" Click="Salir_Click" />
+            <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#F12C20" BorderBrush="#F12C20" Margin="0,0,10,0" Click="Salir_Click" />
         </Grid>
         <StackPanel Orientation="Vertical" Grid.Row="3"  VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -44,11 +44,11 @@
             <StackPanel Orientation="Vertical" Margin="20" HorizontalAlignment="Center" >
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,30">
                     <TextBlock Text="Maestro"  FontSize="20"/>
-                    <ComboBox x:Name="cmbMaestro" Width="150" FontSize="20"/>
+                    <ComboBox x:Name="cmbMaestro" Width="150" FontSize="20" Margin="15,0,0,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Solfeo  "  FontSize="20"/>
-                    <ComboBox x:Name="cmbSolfeo" Width="150" FontSize="20"/>
+                    <ComboBox x:Name="cmbSolfeo" Width="150" FontSize="20" Margin="21,0,0,0"/>
                 </StackPanel>
             </StackPanel>
 

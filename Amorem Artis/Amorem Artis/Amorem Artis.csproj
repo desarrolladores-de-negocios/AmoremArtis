@@ -79,12 +79,6 @@
     <Compile Include="UserControlAlumno.xaml.cs">
       <DependentUpon>UserControlAlumno.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlClase.xaml.cs">
-      <DependentUpon>UserControlClase.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlClaseMaestro.xaml.cs">
-      <DependentUpon>UserControlClaseMaestro.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControlInstrumentos.xaml.cs">
       <DependentUpon>UserControlInstrumentos.xaml</DependentUpon>
     </Compile>
@@ -141,14 +135,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UserControlAlumno.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControlClase.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControlClaseMaestro.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

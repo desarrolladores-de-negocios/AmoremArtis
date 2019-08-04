@@ -35,6 +35,9 @@ namespace Amorem_Artis
             stkBusqueda.Visibility = Visibility.Collapsed;
             stkboton.Visibility = Visibility.Visible;
             DataGridPagos.Visibility = Visibility.Collapsed;
+            GridPagosAlumno.Visibility = Visibility.Visible;
+            dgPagosPendientesAlumno.Visibility = Visibility.Visible;
+            lblPagosPendientesAlumno.Visibility = Visibility.Visible;
         }
 
         private void BtnVolver_Click(object sender, RoutedEventArgs e)
@@ -43,6 +46,9 @@ namespace Amorem_Artis
             stkBusqueda.Visibility = Visibility.Visible;
             stkboton.Visibility = Visibility.Collapsed;
             DataGridPagos.Visibility = Visibility.Visible;
+            GridPagosAlumno.Visibility = Visibility.Collapsed;
+            dgPagosPendientesAlumno.Visibility = Visibility.Collapsed;
+            lblPagosPendientesAlumno.Visibility = Visibility.Collapsed;
         }
     }
 }

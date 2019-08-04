@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
         <Grid Background="#1a237e" Grid.Row="0">
             <TextBlock Text="Solfeo" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
-            <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#1a237e" BorderBrush="#1a237e" Margin="0,0,10,0" Click="Salir_Click" />
+            <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#F12C20" BorderBrush="#F12C20" Margin="0,0,10,0" Click="Salir_Click" />
         </Grid>
         <StackPanel Orientation="Vertical" Grid.Row="2">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -27,7 +27,7 @@
                 <Button x:Name="btnElimarSolfeo" Content="Eliminar Solfeo"  Margin="10,0,0,0"  Visibility="Visible" Click="BtnElimarSolfeo_Click"/>
                 <StackPanel x:Name="stkSolfeo" Orientation="Horizontal"  HorizontalAlignment="Center" Margin="20,0,0,0" Visibility="Collapsed">
                     <TextBlock Text="Solfeo" FontSize="20" />
-                    <TextBox x:Name="txtSolfeo" Width="200" FontSize="20" />
+                    <TextBox x:Name="txtSolfeo" Width="200" FontSize="20" Margin="15,0,0,0"/>
                 </StackPanel>
                 <TextBlock x:Name="txtSol" Text="Solfeo" FontSize="20"  Margin="20,0,0,0" Visibility="Collapsed"/>
             </StackPanel>

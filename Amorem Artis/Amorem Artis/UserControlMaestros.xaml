@@ -25,7 +25,7 @@
                 <Button x:Name="btnModificarMaestro" Content="Modificar Maestro"  Margin="10,0,0,0"  Visibility="Visible" Click="BtnModificarMaestro_Click"/>
                 <Button x:Name="btnElimarMaestro" Content="Eliminar Maestro"  Margin="10,0,0,0"  Visibility="Visible" Click="BtnElimarMaestro_Click"/>
                 <TextBlock x:Name="txtMaestro" Text="Maestro" FontSize="20" Visibility="Collapsed" Margin="20,0,0,0"/>
-                <ComboBox x:Name="ComboMaestro" Width="150" Visibility="Collapsed" />
+                <ComboBox x:Name="ComboMaestro" Width="150" Visibility="Collapsed" Margin="15,0,0,0"/>
             </StackPanel>
         </StackPanel>
         <Grid Grid.Row="3" x:Name="GridDatosMaestro" Visibility="Collapsed">
@@ -51,7 +51,7 @@
                     <TextBox x:Name="txtEdad"  Width="200" FontSize="20" Margin="17,0,0,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" >
-                    <TextBlock Text="Telefono " FontSize="20" VerticalAlignment="Center"/>
+                    <TextBlock Text="Teléfono " FontSize="20" VerticalAlignment="Center"/>
                     <TextBox x:Name="txtTelefono"  Width="200" FontSize="20" Margin="18,0,0,0"/>
                 </StackPanel>
             </StackPanel>

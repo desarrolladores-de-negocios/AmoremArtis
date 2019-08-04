@@ -17,15 +17,15 @@
         </Grid.RowDefinitions>
         <Grid Background="#1a237e" Grid.Row="0">
             <TextBlock Text="Pagos" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
-            <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#1a237e" BorderBrush="#1a237e" Margin="0,0,10,0" Click="Salir_Click" />
+            <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#F12C20" BorderBrush="#F12C20" Margin="0,0,10,0" Click="Salir_Click" />
         </Grid>
         <StackPanel Orientation="Vertical" Grid.Row="2">
             <StackPanel x:Name="stkBusqueda" Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Text="Fechas" FontSize="20" Margin="0,0,30,0"/>
                 <TextBlock Text="Desde" FontSize="20"/>
-                <DatePicker x:Name="FechaDesde"  Width="100" Margin="0,0,30,0"/>
+                <DatePicker x:Name="FechaDesde"  Width="100" Margin="15,0,30,0"/>
                 <TextBlock Text="Hasta" FontSize="20"/>
-                <DatePicker x:Name="FechaHasta"  Width="100"/>
+                <DatePicker x:Name="FechaHasta"  Width="100" Margin="15,0,30,0"/>
                 <Button x:Name="btnBuscar" Content="Buscar" Margin="10,0,0,0"/>
                 <Button  x:Name="btnAgregar" Content="Agregar Pago" Margin="10,0,0,0" Click="BtnAgregar_Click"/>
             </StackPanel>
@@ -34,19 +34,19 @@
         <StackPanel x:Name="stkAgregar"  Grid.Row="3" Margin="20,0,20,0" Orientation="Vertical" Visibility="Collapsed" HorizontalAlignment="Center" >
             <StackPanel Orientation="Horizontal" Margin="0,0,0,30">
                 <TextBlock Text="Maestro" FontSize="20"/>
-                <ComboBox x:Name="CmbMaestro"  Width="150" Margin="0,0,30,0"/>
+                <ComboBox x:Name="CmbMaestro"  Width="150" Margin="15,0,30,0"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,0,0,30">
                 <TextBlock Text="Pago     " FontSize="20" />
-                <TextBox x:Name="txtPago"  Width="150" Margin="0,0,30,0"/>
+                <TextBox x:Name="txtPago"  Width="150" Margin="16,0,30,0"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,0,0,30">
                 <TextBlock Text="Motivo " FontSize="20"/>
-                <TextBox x:Name="txtMotivo"  Width="150" Margin="0,0,30,0"/>
+                <TextBox x:Name="txtMotivo"  Width="150" Margin="20,0,30,0"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,0,0,30">
                 <TextBlock Text="Fecha    " FontSize="20"/>
-                <DatePicker x:Name="dateFecha"  Width="150" Margin="0,0,30,0"/>
+                <DatePicker x:Name="dateFecha"  Width="150" Margin="15,0,30,0"/>
             </StackPanel>
         </StackPanel>
         <StackPanel x:Name="stkboton" Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Visibility="Collapsed">

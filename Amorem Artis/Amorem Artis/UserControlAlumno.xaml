@@ -25,7 +25,7 @@
                 <Button x:Name="btnModificarAlumno" Content="Modificar Alumno"  Margin="10,0,0,0"  Visibility="Visible" Click="BtnModificarAlumno_Click"/>
                 <Button x:Name="btnElimarAlumno" Content="Eliminar Alumno"  Margin="10,0,0,0"  Visibility="Visible" Click="BtnElimarAlumno_Click"/>
                 <TextBlock x:Name="txtAlumno" Text="Alumno" FontSize="20" Visibility="Collapsed" Margin="20,0,0,0"/>
-                <ComboBox x:Name="ComboAlumno" Width="150" Visibility="Collapsed" />
+                <ComboBox x:Name="ComboAlumno" Width="150" Visibility="Collapsed" Margin="15,0,0,0"/>
             </StackPanel>
         </StackPanel>
         <Grid Grid.Row="3" x:Name="GridDatosAlumno" Visibility="Collapsed">
@@ -36,27 +36,35 @@
             <StackPanel Name="stkNuevoAlumno"  Orientation="Vertical"  HorizontalAlignment="Center" VerticalAlignment="Center">
                 <StackPanel Orientation="Horizontal" >
                     <TextBlock Text="Identidad" FontSize="20" VerticalAlignment="Center" Margin="0,0,0,0"/>
-                    <TextBox x:Name="txtIdentidad" Width="200" FontSize="20" Visibility="Visible" Margin="15,0,0,0"/>
+                    <TextBox x:Name="txtIdentidad" Width="200" FontSize="20" Visibility="Visible" Margin="80,0,0,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" >
                     <TextBlock Text="Nombres " FontSize="20" VerticalAlignment="Center"/>
-                    <TextBox x:Name="txtNombre"  Width="200" FontSize="20" Margin="12,0,0,0"/>
+                    <TextBox x:Name="txtNombre"  Width="200" FontSize="20" Margin="77,0,0,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" >
                     <TextBlock Text="Apellidos " FontSize="20" VerticalAlignment="Center"/>
-                    <TextBox x:Name="txtApellido"  Width="200" FontSize="20" Margin="12,0,0,0"/>
+                    <TextBox x:Name="txtApellido"  Width="200" FontSize="20" Margin="77,0,0,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" >
                     <TextBlock Text="Edad       " FontSize="20" VerticalAlignment="Center"/>
-                    <TextBox x:Name="txtEdad"  Width="200" FontSize="20" Margin="17,0,0,0"/>
+                    <TextBox x:Name="txtEdad"  Width="200" FontSize="20" Margin="82,0,0,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" >
-                    <TextBlock Text="Telefono " FontSize="20" VerticalAlignment="Center"/>
-                    <TextBox x:Name="txtTelefono"  Width="200" FontSize="20" Margin="18,0,0,0"/>
+                    <TextBlock Text="Teléfono " FontSize="20" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtTelefono"  Width="200" FontSize="20" Margin="83,0,0,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" >
                     <TextBlock Text="Padres " FontSize="20" VerticalAlignment="Center"/>
-                    <TextBox x:Name="txtPadre"  Width="200" FontSize="20" Margin="35,0,0,0"/>
+                    <TextBox x:Name="txtPadre"  Width="200" FontSize="20" Margin="100,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Text="Tipo de alumno " FontSize="20" VerticalAlignment="Center" Margin="0,2,0,2"/>
+                    <ComboBox x:Name="comboBox" FontSize="20" Margin="20,0,0,0" Width="200"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Text="Descuento" FontSize="20" VerticalAlignment="Center" Margin="0,2,0,2"/>
+                    <TextBox x:Name="txtDescuento"  Width="200" FontSize="20" Margin="70,0,0,0"/>
                 </StackPanel>
             </StackPanel>
             <DataGrid Name="dgNuevoAlumno" Grid.Column="1" Margin="10"/>
@@ -77,7 +85,7 @@
                 <DataGrid x:Name="dgAlumnos" Visibility="Visible" HorizontalAlignment="Center" MinHeight="230" MinWidth="370"/>
             </StackPanel>
             <StackPanel Name="stkTabControlAlumno" Grid.Column="0" Visibility="Collapsed">
-                <TabControl x:Name="tabControlAlumno" Height="300" Margin="20,0,10,0">
+                <TabControl x:Name="tabControlAlumno" Height="300" Margin="10,0,-15,0">
                     <TabItem Header="Identidad">
                         <Grid Background="#FFE5E5E5">
                             <Label Name="lblIdentidadActual" Content="Identidad Actual" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top" FontSize="15"/>
@@ -140,6 +148,15 @@
                             <Button Name="btnAgregarPadre" Content="Agregar"  Margin="40,0,10,0"  Visibility="Visible" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
                             <Button Name="btnModificarPadre" Content="Modificar"  Margin="10,0,10,0"  Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
                             <Button Name="btnQuitarPadre" Content="Quitar"  Margin="10,0,50,0"  Visibility="Visible" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Descuento">
+                        <Grid Background="#FFE5E5E5">
+                            <Label Name="lblDescuentoActual" Content="Descuento Actual" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top" FontSize="15"/>
+                            <TextBox Name="txbDescuentoActual" HorizontalAlignment="Center" Height="25" Margin="0,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" FontSize="15"/>
+                            <Label Name="lblNuevoDescuento" Content="Descuento Edad" HorizontalAlignment="Center" Margin="0,120,0,0" VerticalAlignment="Top" FontSize="15"/>
+                            <TextBox Name="txbNuevoDescuento" HorizontalAlignment="Center" Height="25" Margin="0,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" FontSize="15"/>
+                            <Button Name="btnModificarDescuento" Content="Modificar"  Margin="10,0,10,0"  Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
                         </Grid>
                     </TabItem>
                 </TabControl>

@@ -29,7 +29,9 @@ namespace Amorem_Artis
         {
             dataGridBusqueda.Visibility = Visibility.Collapsed;
             btnEliminarDeSolfeo.Visibility = Visibility.Collapsed;
+            btnAgregarDeSolfeo.Visibility = Visibility.Collapsed;
             btnAgregar.Visibility = Visibility.Visible;
+            btnEliminar.Visibility = Visibility.Collapsed;
             GridDetalles.Visibility = Visibility.Visible;
             btnVolver.Visibility = Visibility.Visible;
             stkbusqueda.Visibility = Visibility.Collapsed;
@@ -39,7 +41,9 @@ namespace Amorem_Artis
         {
             dataGridBusqueda.Visibility = Visibility.Collapsed;
             btnAgregarDeSolfeo.Visibility = Visibility.Collapsed;
+            btnEliminarDeSolfeo.Visibility = Visibility.Collapsed;
             btnEliminar.Visibility = Visibility.Visible;
+            btnAgregar.Visibility = Visibility.Collapsed;
             GridDetalles.Visibility = Visibility.Visible;
             btnVolver.Visibility = Visibility.Visible;
             stkbusqueda.Visibility = Visibility.Collapsed;
@@ -49,6 +53,7 @@ namespace Amorem_Artis
         {
             dataGridBusqueda.Visibility = Visibility.Visible;
             btnEliminarDeSolfeo.Visibility = Visibility.Visible;
+            btnAgregarDeSolfeo.Visibility = Visibility.Visible;
             btnAgregar.Visibility = Visibility.Collapsed;
             GridDetalles.Visibility = Visibility.Collapsed;
             btnVolver.Visibility = Visibility.Collapsed;
