@@ -23,7 +23,7 @@ namespace Amorem_Artis
     /// </summary>
     public partial class UserControlInstrumentos : UserControl
     {
-        DataClassesCursosDataContext dt = new DataClassesCursosDataContext(Properties.Settings.Default.AmoremArtisConnectionString);
+        DataClasses1DataContext dt = new DataClasses1DataContext(Properties.Settings.Default.AmoremArtisConnectionString);
         public UserControlInstrumentos()
         {
             InitializeComponent();

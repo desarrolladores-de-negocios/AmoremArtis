@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel x:Name="stkbusqueda" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button x:Name="btnBuscar" Content="Buscar"/>
+            <Button x:Name="btnBuscar" Content="Buscar" Click="BtnBuscar_Click"/>
             <TextBlock Text="Sección" FontSize="20" VerticalAlignment="Center" Margin="30,0,0,0"/>
             <TextBox x:Name="txtSeccion" Width="150" VerticalAlignment="Center" Margin="15,0,0,0"/>
             <TextBlock Text="Alumno" FontSize="20" VerticalAlignment="Center" Margin="30,0,0,0"/>

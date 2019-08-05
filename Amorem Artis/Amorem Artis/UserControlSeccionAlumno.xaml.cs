@@ -303,5 +303,12 @@ namespace Amorem_Artis
         {
             
         }
+
+        private void BtnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+            DataClasses1DataContext context = new DataClasses1DataContext(connectionString);
+
+            //var query = from 
+        }
     }
 }

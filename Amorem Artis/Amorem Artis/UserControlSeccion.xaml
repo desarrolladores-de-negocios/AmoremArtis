@@ -22,7 +22,7 @@
         </Grid>
         <Button x:Name="btnGuardar" Content="Guardar"  Click="BtnGuardar_Click" Grid.Row="2" Width="100"/>
 
-        <DataGrid x:Name="gridSeccion"  Visibility="Visible" VerticalAlignment="Stretch" MinHeight="300" Grid.Row="3" Margin="50,0,50,0" />
+        <DataGrid x:Name="gridSeccion"  Visibility="Visible" VerticalAlignment="Stretch" MinHeight="300" Grid.Row="3" Margin="180,0,180,0" />
             
     </Grid>
 </UserControl>

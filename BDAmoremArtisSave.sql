@@ -1022,7 +1022,6 @@ GO
 
 SELECT Informacion.Nombre.Nombre			AS 'Primer Nombre',
 	   Informacion.Apellido.Apellido		AS 'Primer Apellido',
-	   Alumnos.Categoria.Categoria			AS Categoria,
 	   Alumnos.Instrumento.Instrumento		AS Instrumento,
 	   Alumnos.SeccionInstrumento.Seccion	AS Seccion
 	   --Alumnos.Solfeo.Seccion				AS Solfeo
@@ -1589,16 +1588,16 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE spInsercionDetalleAlumno
+ALTER PROCEDURE spInsercionDetalleAlumno
 (
 	@AlumnoIdentidad NVARCHAR (15),
-	@Categoria NVARCHAR (20),
+	@Categoria NVARCHAR (20) = NULL,
 	@Instrumento NVARCHAR (50) = NULL,
-	@SeccionInstrumento NVARCHAR (5) = NULL,
+	@SeccionInstrumento NVARCHAR (5),
 	@Usuario NVARCHAR (20),
 	@Estado NVARCHAR (20)
 )
-AS
+AS			select * from Alumnos.SeccionInstrumento where idInstrumento = 3007
 BEGIN
 	BEGIN TRY
 		DECLARE @SeleccionAlumno INT
@@ -1816,7 +1815,7 @@ BEGIN
 		DECLARE @idUsuario INT
 
 		SET @SeleccionAlumno = (SELECT id FROM Alumnos.Alumno WHERE Identidad = @Alumno)
-		SET @EstadoIngresa = (SELECT id FROM Informacion.Estados WHERE Estado = 'No Matriculado')
+		SET @EstadoIngresa = (SELECT id FROM Informacion.Estados WHERE Estado = 'Matriculado')
 		SET @idUsuario = (SELECT id FROM Seguridad.Usuario WHERE Usuario = @Usuario)
 		
 		IF NOT EXISTS (SELECT * FROM MatriculaMensualidad.Matricula WHERE idAlumno = @SeleccionAlumno)
@@ -1860,10 +1859,11 @@ BEGIN
 	END CATCH
 END
 GO
-
-CREATE PROCEDURE spInsercionMensualidad
+select * from Informacion.Estados
+ALTER PROCEDURE spInsercionMensualidad
 (
 	@Alumno NVARCHAR(15),
+	@Categoria NVARCHAR(20),
 	@Usuario NVARCHAR (20)
 )
 AS
@@ -1872,21 +1872,21 @@ BEGIN
 		DECLARE @SeleccionAlumno INT
 		DECLARE @SeleccionMensualidad INT
 		DECLARE @EstadoIngresa INT
-		DECLARE @Validacion INT
-		DECLARE @Calculo INT
+		DECLARE @Calculo DECIMAL
 		DECLARE @SeleccionDescuento INT
+		DECLARE @idUsuario INT
 
 		SET @SeleccionAlumno = (SELECT id FROM Alumnos.Alumno WHERE Identidad = @Alumno)
+		SET @SeleccionMensualidad = (SELECT Precio FROM Alumnos.Categoria WHERE Categoria = @Categoria)
 		SET @EstadoIngresa = (SELECT id FROM Informacion.Estados WHERE Estado = 'No Pagado')
-		SET @Validacion = (SELECT COUNT(*) FROM Alumnos.DetalleAlumno
-						   WHERE idAlumno = 1001)
 		SET @SeleccionDescuento = (SELECT Descuento FROM Alumnos.Alumno WHERE id = @SeleccionAlumno)
+		SET @Calculo = @SeleccionMensualidad - @SeleccionDescuento
+		SET @idUsuario = (SELECT id FROM Seguridad.Usuario WHERE Usuario = @Usuario)
 
-		IF (@Validacion = 0)
-			INSERT INTO MatriculaMensualidad.Mensualidad (idAlumno, Mensualidad, idEstado, Fecha, Usuario)
-				VALUES (@Alumno, @SeleccionMensualidad - @SeleccionDescuento, @EstadoIngresa, GETDATE(), @Usuario)
+		INSERT INTO MatriculaMensualidad.Mensualidad (idAlumno, Mensualidad, idEstado, Fecha, Usuario)
+			VALUES (@SeleccionAlumno, @Calculo, @EstadoIngresa, GETDATE(), @idUsuario)
 
-	END TRY
+	END TRY 
 	BEGIN CATCH
 		PRINT ERROR_MESSAGE()
 		PRINT ERROR_NUMBER()
@@ -1894,7 +1894,8 @@ BEGIN
 	END CATCH
 END
 GO
-
+delete from Alumnos.DetalleAlumno where id > 1
+select * from Informacion.Estados
 CREATE PROCEDURE SP_ModificarMensualidad
 (
 	@Alumno NVARCHAR (15),
@@ -2528,6 +2529,7 @@ BEGIN
 	END CATCH
 END
 GO
+select * from Seguridad.Usuario
 
 CREATE PROCEDURE spModificarUsuario
 (
@@ -2626,7 +2628,7 @@ INSERT INTO Alumnos.TipoAlumno (Tipo)
 	VALUES ('Normal'),
 		   ('Becado')
 GO
-
+select * from Alumnos.Categoria
 spInsercionCategoria 'Instrumento', 600, 'Activo'
 GO
 spInsercionCategoria 'Artes Visuales', 600, 'Activo'

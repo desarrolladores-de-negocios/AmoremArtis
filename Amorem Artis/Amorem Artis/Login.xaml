@@ -21,7 +21,7 @@
             </Rectangle.Fill>
         </Rectangle>
         <StackPanel Margin="20,30,290,10" >
-            <Label Content="Login" FontFamily="Segoe UI Black" FontSize="24" Margin="0,10" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="Iniciar Sesión" FontFamily="Segoe UI Black" FontSize="24" Margin="0,10" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <StackPanel Orientation="Horizontal">
                 <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" Foreground="#707070"><Run Text="Ingrese un usuario y contraseña valida "/></TextBlock>
             </StackPanel>

@@ -20,7 +20,7 @@
             <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#F12C20" BorderBrush="#F12C20" Margin="0,0,10,0" Click="Salir_Click" />
         </Grid>
         <Button x:Name="Guardar" Content="Guardar"  Click="Guardar_Click" Grid.Row="2" Width="100" />
-        <DataGrid x:Name="gridSolfeo" Margin="50,0,50,0"  Visibility="Visible" VerticalAlignment="Stretch" Grid.Row="3"  /> 
+        <DataGrid x:Name="gridSolfeo" Margin="200,0,200,0"  Visibility="Visible" VerticalAlignment="Stretch" Grid.Row="3"  /> 
 
 
     </Grid>
