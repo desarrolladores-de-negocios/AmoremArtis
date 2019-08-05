@@ -71,11 +71,6 @@
       <DependentUpon>AmoremArtisDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Conexion.cs" />
-    <Compile Include="DataClassesCursos.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataClassesCursos.dbml</DependentUpon>
-    </Compile>
     <Compile Include="Encriptacion.cs" />
     <Compile Include="ItemMenu.cs" />
     <Compile Include="Login.xaml.cs">
@@ -232,14 +227,6 @@
     </None>
     <None Include="AmoremArtisDataSet.xss">
       <DependentUpon>AmoremArtisDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DataClassesCursos.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DataClassesCursos.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataClassesCursos.dbml.layout">
-      <DependentUpon>DataClassesCursos.dbml</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
