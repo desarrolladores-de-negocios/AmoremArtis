@@ -14,31 +14,15 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid Background="#1a237e" Grid.Row="0">
             <TextBlock Text="Solfeo" FontSize="30" FontStyle="Italic" Foreground="White" HorizontalAlignment="Center"/>
             <Button x:Name="Salir" Content="X" HorizontalAlignment="Right" Background="#F12C20" BorderBrush="#F12C20" Margin="0,0,10,0" Click="Salir_Click" />
         </Grid>
-        <StackPanel Orientation="Vertical" Grid.Row="2">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="btnNuevoSolfeo" Content="Nuevo Solfeo"  Visibility="Visible" Click="BtnNuevoSolfeo_Click"/>
-                <Button x:Name="btnModificarSolfeo" Content="Modificar Solfeo"  Margin="10,0,0,0"  Visibility="Visible" Click="BtnModificarSolfeo_Click"/>
-                <Button x:Name="btnElimarSolfeo" Content="Eliminar Solfeo"  Margin="10,0,0,0"  Visibility="Visible" Click="BtnElimarSolfeo_Click"/>
-                <StackPanel x:Name="stkSolfeo" Orientation="Horizontal"  HorizontalAlignment="Center" Margin="20,0,0,0" Visibility="Collapsed">
-                    <TextBlock Text="Solfeo" FontSize="20" />
-                    <TextBox x:Name="txtSolfeo" Width="200" FontSize="20" Margin="15,0,0,0"/>
-                </StackPanel>
-                <TextBlock x:Name="txtSol" Text="Solfeo" FontSize="20"  Margin="20,0,0,0" Visibility="Collapsed"/>
-            </StackPanel>
-        </StackPanel>
-        <DataGrid x:Name="gridSolfeo" Margin="20,0,20,0"  Visibility="Visible" VerticalAlignment="Stretch" Grid.Row="3"/>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4">
-            <Button x:Name="btnAgregar" Content="Agregar" Margin="10,0,0,0" Visibility="Collapsed"/>
-            <Button x:Name="btnModificar" Content="Modificar" Margin="10,0,0,0"  Visibility="Collapsed" />
-            <Button x:Name="btnEliminar" Content="Eliminar" Margin="10,0,0,0" Visibility="Collapsed"  />
-            <Button x:Name="btnVolver" Content="Volver" Margin="10,0,0,0" Visibility="Collapsed" Click="BtnVolver_Click" />
-        </StackPanel>
+        <Button x:Name="Guardar" Content="Guardar"  Click="Guardar_Click" Grid.Row="2" Width="100" />
+        <DataGrid x:Name="gridSolfeo" Margin="50,0,50,0"  Visibility="Visible" VerticalAlignment="Stretch" Grid.Row="3"  /> 
+
+
     </Grid>
 </UserControl>
 
