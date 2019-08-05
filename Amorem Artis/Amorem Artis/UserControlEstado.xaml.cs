@@ -16,16 +16,15 @@ using System.Windows.Shapes;
 namespace Amorem_Artis
 {
     /// <summary>
-    /// Lógica de interacción para UserControlSeccion.xaml
+    /// Lógica de interacción para UserControlEstado.xaml
     /// </summary>
-    public partial class UserControlSeccion : UserControl
+    public partial class UserControlEstado : UserControl
     {
         DataClassesCursosDataContext dt = new DataClassesCursosDataContext(Properties.Settings.Default.AmoremArtisConnectionString);
-        public UserControlSeccion()
+        public UserControlEstado()
         {
             InitializeComponent();
-            if (dt.DatabaseExists()) gridSeccion.ItemsSource = dt.SeccionInstrumento;
-
+            if (dt.DatabaseExists()) gridEstado.ItemsSource = dt.Estados;
         }
 
         private void Salir_Click(object sender, RoutedEventArgs e)
@@ -33,11 +32,11 @@ namespace Amorem_Artis
             (this.Parent as Panel).Children.Remove(this);
         }
 
-     
-
-        private void BtnGuardar_Click(object sender, RoutedEventArgs e)
+        private void Guardar_Click(object sender, RoutedEventArgs e)
         {
             dt.SubmitChanges();
         }
+
+
     }
 }

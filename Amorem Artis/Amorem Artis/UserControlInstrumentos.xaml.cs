@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+
 
 
 namespace Amorem_Artis
@@ -21,10 +23,12 @@ namespace Amorem_Artis
     /// </summary>
     public partial class UserControlInstrumentos : UserControl
     {
+        DataClassesCursosDataContext dt = new DataClassesCursosDataContext(Properties.Settings.Default.AmoremArtisConnectionString);
         public UserControlInstrumentos()
         {
             InitializeComponent();
-            
+
+            if (dt.DatabaseExists()) gridInstrumentos.ItemsSource = dt.Instrumento;
         }
 
         public void Salir_Click(object sender, RoutedEventArgs e)
@@ -32,49 +36,10 @@ namespace Amorem_Artis
             (this.Parent as Panel).Children.Remove(this);           
         }
 
-        private void BtnNuevoInstrumento_Click(object sender, RoutedEventArgs e)
+      
+        private void Guardar_Click(object sender, RoutedEventArgs e)
         {
-            btnNuevoInstrumento.Visibility = Visibility.Collapsed;
-            stkInstrumento.Visibility = Visibility.Visible;
-            btnAgregar.Visibility = Visibility.Visible;
-            btnVolver.Visibility = Visibility.Visible;
-            btnModificarInstrumento.Visibility = Visibility.Collapsed;
-            btnElimarInstrumento.Visibility = Visibility.Collapsed;
-            txtInstrumento.Visibility = Visibility.Visible;
-        }
-
-
-        private void BtnModificarInstrumento_Click(object sender, RoutedEventArgs e)
-        {
-            btnModificarInstrumento.Visibility = Visibility.Collapsed;
-            stkInstrumento.Visibility = Visibility.Visible;
-            btnModificar.Visibility = Visibility.Visible;
-            btnVolver.Visibility = Visibility.Visible;
-            btnElimarInstrumento.Visibility = Visibility.Collapsed;
-            btnNuevoInstrumento.Visibility = Visibility.Collapsed;
-        }
-
-        private void BtnElimarInstrumento_Click(object sender, RoutedEventArgs e)
-        {
-            btnElimarInstrumento.Visibility = Visibility.Collapsed;
-            txtIns.Visibility = Visibility.Collapsed;
-            btnEliminar.Visibility = Visibility.Visible;
-            btnVolver.Visibility = Visibility.Visible;
-            btnNuevoInstrumento.Visibility = Visibility.Collapsed;
-            btnModificarInstrumento.Visibility = Visibility.Collapsed;
-            stkInstrumento.Visibility = Visibility.Visible;
-        }
-
-        private void BtnVolver_Click(object sender, RoutedEventArgs e)
-        {
-            stkInstrumento.Visibility = Visibility.Collapsed;
-            btnAgregar.Visibility = Visibility.Collapsed;
-            btnModificar.Visibility = Visibility.Collapsed;
-            btnEliminar.Visibility = Visibility.Collapsed;
-            btnVolver.Visibility = Visibility.Collapsed;
-            btnNuevoInstrumento.Visibility = Visibility.Visible;
-            btnModificarInstrumento.Visibility = Visibility.Visible;
-            btnElimarInstrumento.Visibility = Visibility.Visible;
+            dt.SubmitChanges();
         }
     }
 }
