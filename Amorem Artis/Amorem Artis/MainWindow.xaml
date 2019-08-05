@@ -37,7 +37,7 @@
             <Grid Grid.Row="0" Background="#1A237E" Height="60" Margin="10,0,10,0" >
                 <StackPanel VerticalAlignment="Center" Margin="30,0,0,0" Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="User"  Width="40" Height="40" Foreground="White" />
-                    <TextBlock Text="Usuario" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" Margin="10,0,0,0" Foreground="White"  FontFamily="Candara Light"/>
+                    <TextBlock x:Name="txtUsuarioActivo" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="20" Margin="10,0,0,0" Foreground="White"  FontFamily="Candara Light"/>
                 </StackPanel>
             </Grid>
 

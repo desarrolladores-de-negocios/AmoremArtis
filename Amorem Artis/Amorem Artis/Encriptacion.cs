@@ -11,7 +11,7 @@ namespace Amorem_Artis
     {
         public string laCadena { get; set; }
 
-        public static string procesarSha256Hash(string laCadena)
+        public string procesarSha256Hash(string laCadena)
         {
             // Crear SHA256   
             using (SHA256 sha256Hash = SHA256.Create())

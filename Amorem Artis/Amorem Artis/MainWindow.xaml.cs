@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DropDownMenu;
 using System.Windows.Threading;
+using System.Data.SqlClient;
 
 namespace Amorem_Artis
 {
@@ -24,6 +25,8 @@ namespace Amorem_Artis
     /// </summary>
     public partial class MainWindow : Window
     {
+        SqlConnection connectionString = new SqlConnection(Properties.Settings.Default.AmoremArtisConnectionString);
+
         public MainWindow()
         {
             InitializeComponent();
@@ -60,6 +63,7 @@ namespace Amorem_Artis
             Menu.Children.Add(new UserControlMenuItem(item3, this));
             Menu.Children.Add(new UserControlMenuItem(item4, this));
 
+            txtUsuarioActivo.Text = Login.User;
         }
         private void IniciarReloj()
         {
@@ -109,6 +113,17 @@ namespace Amorem_Artis
             {
                 //No hace nada
             }
+        }
+
+        private string MostrarUsuarioActivo()
+        {
+            DataClasses1DataContext context = new DataClasses1DataContext(connectionString);
+
+            var query = (from usuario in context.Usuario
+                        where usuario.Usuario1 == Login.User
+                        select usuario.Usuario1);
+
+            return query.ToString();
         }
     }
 }

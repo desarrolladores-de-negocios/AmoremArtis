@@ -104,7 +104,7 @@ CREATE TABLE Alumnos.Alumno
 	Descuento DECIMAL NULL
 )
 GO
-
+select * from Seguridad.Usuario
 CREATE TABLE Alumnos.Padre
 (
 	id INT IDENTITY(2000, 1) NOT NULL,
@@ -1877,11 +1877,10 @@ BEGIN
 		DECLARE @SeleccionDescuento INT
 
 		SET @SeleccionAlumno = (SELECT id FROM Alumnos.Alumno WHERE Identidad = @Alumno)
-		SET @SeleccionMensualidad = (SELECT Precio FROM Alumnos.Categoria WHERE id = 2)
 		SET @EstadoIngresa = (SELECT id FROM Informacion.Estados WHERE Estado = 'No Pagado')
 		SET @Validacion = (SELECT COUNT(*) FROM Alumnos.DetalleAlumno
 						   WHERE idAlumno = 1001)
-		SET @SeleccionDescuento = (SELECT Descuento FROM Alumnos.Alumno WHERE id = @Alumno)
+		SET @SeleccionDescuento = (SELECT Descuento FROM Alumnos.Alumno WHERE id = @SeleccionAlumno)
 
 		IF (@Validacion = 0)
 			INSERT INTO MatriculaMensualidad.Mensualidad (idAlumno, Mensualidad, idEstado, Fecha, Usuario)
@@ -1923,10 +1922,18 @@ BEGIN
 	END CATCH
 END
 GO
+select * from Seguridad.Usuario
+select Usuario,
+	   Nombre
+from Seguridad.Usuario
+inner join Informacion.Nombre
+on Informacion.Nombre.idMaestro = Seguridad.Usuario.idMaestro
+inner join Informacion.Apellido
+on Informacion.
 select * from Planilla.Maestro
-EXEC spInsercionMaestro '0107-1998-00742', 'Christopher David', 'Fiallos', '9797-2178', 'Activo', '3'
+EXEC spInsercionMaestro '0318-1998-01237', 'Nomran', 'Altamirano', '9912-2341', 'Activo', 'Fiallos'
 go
-CREATE PROCEDURE spInsercionMaestro
+ALTER PROCEDURE spInsercionMaestro
 (
 	@Identidad NVARCHAR(15),
 	@Nombre NVARCHAR(50),
@@ -1940,11 +1947,13 @@ BEGIN
 	BEGIN TRY
 		DECLARE @EstadoIngresa INT
 		DECLARE @idMaestro INT
+		DECLARE @idUsuario INT
 
 		SET @EstadoIngresa = (SELECT id FROM Informacion.Estados WHERE Estado = @Estado)
+		SET @idUsuario = (SELECT id FROM Seguridad.Usuario WHERE Usuario = @Usuario)
 
 		INSERT INTO Planilla.Maestro (Identidad, Estado, Fecha, Usuario)
-			VALUES (@Identidad, @EstadoIngresa, GETDATE(), @Usuario)
+			VALUES (@Identidad, @EstadoIngresa, GETDATE(), @idUsuario)
 
 		SET @idMaestro = (SELECT id FROM Planilla.Maestro WHERE Identidad = @Identidad)
 
@@ -2472,6 +2481,13 @@ BEGIN
 END
 GO
 
+select Nombre + ' ' + Apellido
+FROM Informacion.Nombre 
+inner join Informacion.Apellido
+on Informacion.Nombre.idAlumno = Informacion.Apellido.idAlumno
+where Informacion.Nombre.idAlumno is not null
+select * from Planilla.Maestro
+exec spInsercionUsuario '0107-1998-01239', 'yo', '123', 'Administrador', 'Activo'
 CREATE PROCEDURE spInsercionUsuario
 (
 	@Maestro NVARCHAR (15),
@@ -2479,7 +2495,7 @@ CREATE PROCEDURE spInsercionUsuario
 	@Contrasena NVARCHAR (256),
 	@Cargo NVARCHAR (100),
 	@Estado NVARCHAR (20)
-)
+) 
 AS
 BEGIN
 	BEGIN TRY
@@ -2513,7 +2529,7 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE SP_ModificarUsuario
+CREATE PROCEDURE spModificarUsuario
 (
 	@UsuarioAnterior NVARCHAR (20),
 	@UsuarioNuevo NVARCHAR (20) = NULL,
@@ -2543,21 +2559,57 @@ BEGIN
 			WHERE id = @SeleccionUsuario
 	END TRY
 	BEGIN CATCH
-		DECLARE @error INT
-		SET @error = @@ERROR
-
-		IF (@error = 2627)
-			PRINT 'El usuario ya existe!'
-		ELSE IF (@error = 515)
-			PRINT 'El estado no es valido!'
-		ELSE
-			PRINT ERROR_MESSAGE()
-			PRINT ERROR_NUMBER()
-			PRINT ERROR_LINE()
+		PRINT ERROR_MESSAGE()
+		PRINT ERROR_NUMBER()
+		PRINT ERROR_LINE()
 	END CATCH
 END
 GO
 
+CREATE PROCEDURE spInsercionPadre
+(
+	@IdentidadAlumno NVARCHAR (15),
+	@Identidad NVARCHAR (15),
+	@Nombre NVARCHAR (50),
+	@Apellido NVARCHAR (50),
+	@Telefono NVARCHAR (9),
+	@Edad INT,
+	@Estado NVARCHAR(20),
+	@Usuario NVARCHAR(20)
+)
+AS
+BEGIN
+	BEGIN TRY
+		DECLARE @padre INT
+		DECLARE @EstadoIngresa INT
+		DECLARE @idUsuario INT
+		DECLARE @alumno INT
+
+		SET @alumno = (SELECT id FROM Alumnos.Alumno WHERE Identidad = @IdentidadAlumno)
+		SET @EstadoIngresa = (SELECT id FROM Informacion.Estados WHERE Estado = @Estado)
+		SET @idUsuario = (SELECT id FROM Seguridad.Usuario WHERE Usuario = @Usuario)
+
+		IF (SELECT COUNT(*) FROM Alumnos.Padre WHERE idAlumno = @alumno) <= 2
+			INSERT INTO Alumnos.Padre (Identidad, idAlumno, Edad, Fecha, Estado, Usuario)
+			VALUES (@Identidad, @alumno, @Edad, GETDATE(), @EstadoIngresa, @Usuario)
+
+			SET @padre = (SELECT id FROM Alumnos.Padre WHERE idAlumno = @alumno AND Identidad = @Identidad)
+
+			INSERT INTO Informacion.Nombre (idPadre, Nombre)
+			VALUES (@padre, @Nombre)
+
+			INSERT INTO Informacion.Apellido(idPadre, Apellido)
+			VALUES (@padre, @Apellido)
+
+			INSERT INTO Informacion.Telefono(idPadre, Telefono)
+			VALUES (@padre, @Telefono)
+	END TRY
+	BEGIN CATCH
+		PRINT ERROR_MESSAGE()
+		PRINT ERROR_NUMBER()
+		PRINT ERROR_LINE()
+	END CATCH
+END
 -- Inserciones
 INSERT INTO Informacion.Estados (Estado)
 	VALUES ('Matriculado'),

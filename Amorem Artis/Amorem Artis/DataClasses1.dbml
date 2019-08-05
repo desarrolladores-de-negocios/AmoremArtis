@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AmoremArtis" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local)\sqlexpress;Initial Catalog=AmoremArtis;Integrated Security=True" SettingsObjectName="Amorem_Artis.Properties.Settings" SettingsPropertyName="AmoremArtisConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="Alumnos.Alumno" Member="Alumno">
+    <Type Name="Alumno">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Identidad" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Edad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idTipoAlumno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Descuento" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="Alumno_DetalleAlumno" Member="DetalleAlumno" ThisKey="id" OtherKey="idAlumno" Type="DetalleAlumno" />
+      <Association Name="Alumno_Padre" Member="Padre" ThisKey="id" OtherKey="idAlumno" Type="Padre" />
+      <Association Name="Alumno_SolfeoAlumno" Member="SolfeoAlumno" ThisKey="id" OtherKey="idAlumno" Type="SolfeoAlumno" />
+      <Association Name="Alumno_Apellido" Member="Apellido" ThisKey="id" OtherKey="idAlumno" Type="Apellido" />
+      <Association Name="Alumno_Nombre" Member="Nombre" ThisKey="id" OtherKey="idAlumno" Type="Nombre" />
+      <Association Name="Alumno_Telefono" Member="Telefono" ThisKey="id" OtherKey="idAlumno" Type="Telefono" />
+      <Association Name="Alumno_Matricula" Member="Matricula" ThisKey="id" OtherKey="idAlumno" Type="Matricula" />
+      <Association Name="Alumno_Mensualidad" Member="Mensualidad" ThisKey="id" OtherKey="idAlumno" Type="Mensualidad" />
+      <Association Name="TipoAlumno_Alumno" Member="TipoAlumno" ThisKey="idTipoAlumno" OtherKey="id" Type="TipoAlumno" IsForeignKey="true" />
+      <Association Name="Estados_Alumno" Member="Estados" ThisKey="Estado" OtherKey="id" Type="Estados" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Alumnos.Categoria" Member="Categoria">
+    <Type Name="Categoria">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Categoria" Member="Categoria1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="Categoria_DetalleAlumno" Member="DetalleAlumno" ThisKey="id" OtherKey="idCategoria" Type="DetalleAlumno" />
+      <Association Name="Categoria_DetalleMaestro" Member="DetalleMaestro" ThisKey="id" OtherKey="idCategoria" Type="DetalleMaestro" />
+      <Association Name="Estados_Categoria" Member="Estados" ThisKey="Estado" OtherKey="id" Type="Estados" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Alumnos.DetalleAlumno" Member="DetalleAlumno">
+    <Type Name="DetalleAlumno">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idAlumno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idCategoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idInstrumento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idSeccionInstrumento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Alumno_DetalleAlumno" Member="Alumno" ThisKey="idAlumno" OtherKey="id" Type="Alumno" IsForeignKey="true" />
+      <Association Name="Categoria_DetalleAlumno" Member="Categoria" ThisKey="idCategoria" OtherKey="id" Type="Categoria" IsForeignKey="true" />
+      <Association Name="Instrumento_DetalleAlumno" Member="Instrumento" ThisKey="idInstrumento" OtherKey="id" Type="Instrumento" IsForeignKey="true" />
+      <Association Name="SeccionInstrumento_DetalleAlumno" Member="SeccionInstrumento" ThisKey="idSeccionInstrumento" OtherKey="id" Type="SeccionInstrumento" IsForeignKey="true" />
+      <Association Name="Estados_DetalleAlumno" Member="Estados" ThisKey="Estado" OtherKey="id" Type="Estados" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Alumnos.Instrumento" Member="Instrumento">
+    <Type Name="Instrumento">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Instrumento" Member="Instrumento1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Instrumento_DetalleAlumno" Member="DetalleAlumno" ThisKey="id" OtherKey="idInstrumento" Type="DetalleAlumno" />
+      <Association Name="Instrumento_SeccionInstrumento" Member="SeccionInstrumento" ThisKey="id" OtherKey="idInstrumento" Type="SeccionInstrumento" />
+      <Association Name="Instrumento_DetalleMaestro" Member="DetalleMaestro" ThisKey="id" OtherKey="idInstrumento" Type="DetalleMaestro" />
+      <Association Name="Estados_Instrumento" Member="Estados" ThisKey="Estado" OtherKey="id" Type="Estados" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Alumnos.Padre" Member="Padre">
+    <Type Name="Padre">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idAlumno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Edad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Padre_Apellido" Member="Apellido" ThisKey="id" OtherKey="idPadre" Type="Apellido" />
+      <Association Name="Padre_Nombre" Member="Nombre" ThisKey="id" OtherKey="idPadre" Type="Nombre" />
+      <Association Name="Padre_Telefono" Member="Telefono" ThisKey="id" OtherKey="idPadre" Type="Telefono" />
+      <Association Name="Alumno_Padre" Member="Alumno" ThisKey="idAlumno" OtherKey="id" Type="Alumno" IsForeignKey="true" />
+      <Association Name="Estados_Padre" Member="Estados" ThisKey="Estado" OtherKey="id" Type="Estados" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Alumnos.SeccionInstrumento" Member="SeccionInstrumento">
+    <Type Name="SeccionInstrumento">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Seccion" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="idInstrumento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SeccionInstrumento_DetalleAlumno" Member="DetalleAlumno" ThisKey="id" OtherKey="idSeccionInstrumento" Type="DetalleAlumno" />
+      <Association Name="SeccionInstrumento_DetalleMaestro" Member="DetalleMaestro" ThisKey="id" OtherKey="idSeccionInstrumento" Type="DetalleMaestro" />
+      <Association Name="Instrumento_SeccionInstrumento" Member="Instrumento" ThisKey="idInstrumento" OtherKey="id" Type="Instrumento" IsForeignKey="true" />
+      <Association Name="Estados_SeccionInstrumento" Member="Estados" ThisKey="Estado" OtherKey="id" Type="Estados" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Alumnos.Solfeo" Member="Solfeo">
+    <Type Name="Solfeo">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Seccion" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Solfeo_SolfeoAlumno" Member="SolfeoAlumno" ThisKey="id" OtherKey="idSolfeo" Type="SolfeoAlumno" />
+      <Association Name="Estados_Solfeo" Member="Estados" ThisKey="Estado" OtherKey="id" Type="Estados" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Alumnos.SolfeoAlumno" Member="SolfeoAlumno">
+    <Type Name="SolfeoAlumno">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idAlumno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idSolfeo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Alumno_SolfeoAlumno" Member="Alumno" ThisKey="idAlumno" OtherKey="id" Type="Alumno" IsForeignKey="true" />
+      <Association Name="Solfeo_SolfeoAlumno" Member="Solfeo" ThisKey="idSolfeo" OtherKey="id" Type="Solfeo" IsForeignKey="true" />
+      <Association Name="Estados_SolfeoAlumno" Member="Estados" ThisKey="Estado" OtherKey="id" Type="Estados" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Alumnos.TipoAlumno" Member="TipoAlumno">
+    <Type Name="TipoAlumno">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tipo" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Association Name="TipoAlumno_Alumno" Member="Alumno" ThisKey="id" OtherKey="idTipoAlumno" Type="Alumno" />
+    </Type>
+  </Table>
+  <Table Name="Informacion.Apellido" Member="Apellido">
+    <Type Name="Apellido">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Apellido" Member="Apellido1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idAlumno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPadre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idMaestro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Alumno_Apellido" Member="Alumno" ThisKey="idAlumno" OtherKey="id" Type="Alumno" IsForeignKey="true" />
+      <Association Name="Padre_Apellido" Member="Padre" ThisKey="idPadre" OtherKey="id" Type="Padre" IsForeignKey="true" />
+      <Association Name="Maestro_Apellido" Member="Maestro" ThisKey="idMaestro" OtherKey="id" Type="Maestro" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Informacion.Estados" Member="Estados">
+    <Type Name="Estados">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Estados_Alumno" Member="Alumno" ThisKey="id" OtherKey="Estado" Type="Alumno" />
+      <Association Name="Estados_Categoria" Member="Categoria" ThisKey="id" OtherKey="Estado" Type="Categoria" />
+      <Association Name="Estados_DetalleAlumno" Member="DetalleAlumno" ThisKey="id" OtherKey="Estado" Type="DetalleAlumno" />
+      <Association Name="Estados_Instrumento" Member="Instrumento" ThisKey="id" OtherKey="Estado" Type="Instrumento" />
+      <Association Name="Estados_Padre" Member="Padre" ThisKey="id" OtherKey="Estado" Type="Padre" />
+      <Association Name="Estados_SeccionInstrumento" Member="SeccionInstrumento" ThisKey="id" OtherKey="Estado" Type="SeccionInstrumento" />
+      <Association Name="Estados_Solfeo" Member="Solfeo" ThisKey="id" OtherKey="Estado" Type="Solfeo" />
+      <Association Name="Estados_SolfeoAlumno" Member="SolfeoAlumno" ThisKey="id" OtherKey="Estado" Type="SolfeoAlumno" />
+      <Association Name="Estados_Matricula" Member="Matricula" ThisKey="id" OtherKey="idEstado" Type="Matricula" />
+      <Association Name="Estados_Mensualidad" Member="Mensualidad" ThisKey="id" OtherKey="idEstado" Type="Mensualidad" />
+      <Association Name="Estados_DetalleMaestro" Member="DetalleMaestro" ThisKey="id" OtherKey="Estado" Type="DetalleMaestro" />
+      <Association Name="Estados_Maestro" Member="Maestro" ThisKey="id" OtherKey="Estado" Type="Maestro" />
+      <Association Name="Estados_HorasTrabajadasDia" Member="HorasTrabajadasDia" ThisKey="id" OtherKey="Estado" Type="HorasTrabajadasDia" />
+      <Association Name="Estados_PagoMensualMaestro" Member="PagoMensualMaestro" ThisKey="id" OtherKey="Estado" Type="PagoMensualMaestro" />
+      <Association Name="Estados_SolfeoMaestro" Member="SolfeoMaestro" ThisKey="id" OtherKey="Estado" Type="SolfeoMaestro" />
+      <Association Name="Estados_Cargo" Member="Cargo" ThisKey="id" OtherKey="Estado" Type="Cargo" />
+      <Association Name="Estados_Usuario" Member="Usuario" ThisKey="id" OtherKey="Estado" Type="Usuario" />
+    </Type>
+  </Table>
+  <Table Name="Informacion.Nombre" Member="Nombre">
+    <Type Name="Nombre">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Member="Nombre1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idAlumno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPadre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idMaestro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Alumno_Nombre" Member="Alumno" ThisKey="idAlumno" OtherKey="id" Type="Alumno" IsForeignKey="true" />
+      <Association Name="Padre_Nombre" Member="Padre" ThisKey="idPadre" OtherKey="id" Type="Padre" IsForeignKey="true" />
+      <Association Name="Maestro_Nombre" Member="Maestro" ThisKey="idMaestro" OtherKey="id" Type="Maestro" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Informacion.Telefono" Member="Telefono">
+    <Type Name="Telefono">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Telefono" Member="Telefono1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="idAlumno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPadre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idMaestro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Alumno_Telefono" Member="Alumno" ThisKey="idAlumno" OtherKey="id" Type="Alumno" IsForeignKey="true" />
+      <Association Name="Padre_Telefono" Member="Padre" ThisKey="idPadre" OtherKey="id" Type="Padre" IsForeignKey="true" />
+      <Association Name="Maestro_Telefono" Member="Maestro" ThisKey="idMaestro" OtherKey="id" Type="Maestro" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="MatriculaMensualidad.Matricula" Member="Matricula">
+    <Type Name="Matricula">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idAlumno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Matricula" Member="Matricula1" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="idEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Alumno_Matricula" Member="Alumno" ThisKey="idAlumno" OtherKey="id" Type="Alumno" IsForeignKey="true" />
+      <Association Name="Estados_Matricula" Member="Estados" ThisKey="idEstado" OtherKey="id" Type="Estados" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="MatriculaMensualidad.Mensualidad" Member="Mensualidad">
+    <Type Name="Mensualidad">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idAlumno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mensualidad" Member="Mensualidad1" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="idEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Alumno_Mensualidad" Member="Alumno" ThisKey="idAlumno" OtherKey="id" Type="Alumno" IsForeignKey="true" />
+      <Association Name="Estados_Mensualidad" Member="Estados" ThisKey="idEstado" OtherKey="id" Type="Estados" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Planilla.DetalleMaestro" Member="DetalleMaestro">
+    <Type Name="DetalleMaestro">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idMaestro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idCategoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idInstrumento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idSeccionInstrumento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Categoria_DetalleMaestro" Member="Categoria" ThisKey="idCategoria" OtherKey="id" Type="Categoria" IsForeignKey="true" />
+      <Association Name="Estados_DetalleMaestro" Member="Estados" ThisKey="Estado" OtherKey="id" Type="Estados" IsForeignKey="true" />
+      <Association Name="Instrumento_DetalleMaestro" Member="Instrumento" ThisKey="idInstrumento" OtherKey="id" Type="Instrumento" IsForeignKey="true" />
+      <Association Name="SeccionInstrumento_DetalleMaestro" Member="SeccionInstrumento" ThisKey="idSeccionInstrumento" OtherKey="id" Type="SeccionInstrumento" IsForeignKey="true" />
+      <Association Name="Maestro_DetalleMaestro" Member="Maestro" ThisKey="idMaestro" OtherKey="id" Type="Maestro" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Planilla.Maestro" Member="Maestro">
+    <Type Name="Maestro">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Identidad" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Maestro_Apellido" Member="Apellido" ThisKey="id" OtherKey="idMaestro" Type="Apellido" />
+      <Association Name="Maestro_Nombre" Member="Nombre" ThisKey="id" OtherKey="idMaestro" Type="Nombre" />
+      <Association Name="Maestro_Telefono" Member="Telefono" ThisKey="id" OtherKey="idMaestro" Type="Telefono" />
+      <Association Name="Maestro_DetalleMaestro" Member="DetalleMaestro" ThisKey="id" OtherKey="idMaestro" Type="DetalleMaestro" />
+      <Association Name="Maestro_HorasTrabajadasDia" Member="HorasTrabajadasDia" ThisKey="id" OtherKey="idMaestro" Type="HorasTrabajadasDia" />
+      <Association Name="Maestro_HorasTrabajadasDia1" Member="HorasTrabajadasDia1" ThisKey="id" OtherKey="idMaestro" Type="HorasTrabajadasDia" />
+      <Association Name="Maestro_PagoMensualMaestro" Member="PagoMensualMaestro" ThisKey="id" OtherKey="idMaestro" Type="PagoMensualMaestro" />
+      <Association Name="Maestro_SolfeoMaestro" Member="SolfeoMaestro" ThisKey="id" OtherKey="idMaestro" Type="SolfeoMaestro" />
+      <Association Name="Maestro_Usuario" Member="Usuario1" ThisKey="id" OtherKey="idMaestro" Type="Usuario" />
+      <Association Name="Estados_Maestro" Member="Estados" ThisKey="Estado" OtherKey="id" Type="Estados" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Planilla.HorasTrabajadasDia" Member="HorasTrabajadasDia">
+    <Type Name="HorasTrabajadasDia">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idMaestro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Horas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Estados_HorasTrabajadasDia" Member="Estados" ThisKey="Estado" OtherKey="id" Type="Estados" IsForeignKey="true" />
+      <Association Name="Maestro_HorasTrabajadasDia" Member="Maestro" ThisKey="idMaestro" OtherKey="id" Type="Maestro" IsForeignKey="true" />
+      <Association Name="Maestro_HorasTrabajadasDia1" Member="Maestro1" ThisKey="idMaestro" OtherKey="id" Type="Maestro" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Planilla.PagoMensualMaestro" Member="PagoMensualMaestro">
+    <Type Name="PagoMensualMaestro">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idMaestro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sueldo" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Maestro_PagoMensualMaestro" Member="Maestro" ThisKey="idMaestro" OtherKey="id" Type="Maestro" IsForeignKey="true" />
+      <Association Name="Estados_PagoMensualMaestro" Member="Estados" ThisKey="Estado" OtherKey="id" Type="Estados" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Planilla.SolfeoMaestro" Member="SolfeoMaestro">
+    <Type Name="SolfeoMaestro">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idMaestro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idSolfeo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Estados_SolfeoMaestro" Member="Estados" ThisKey="Estado" OtherKey="id" Type="Estados" IsForeignKey="true" />
+      <Association Name="Maestro_SolfeoMaestro" Member="Maestro" ThisKey="idMaestro" OtherKey="id" Type="Maestro" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Seguridad.Cargo" Member="Cargo">
+    <Type Name="Cargo">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cargo" Member="Cargo1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Cargo_Usuario" Member="Usuario" ThisKey="id" OtherKey="idCargo" Type="Usuario" />
+      <Association Name="Estados_Cargo" Member="Estados" ThisKey="Estado" OtherKey="id" Type="Estados" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Seguridad.Usuario" Member="Usuario">
+    <Type Name="Usuario">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Usuario" Member="Usuario1" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Pass" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idCargo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idMaestro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Maestro_Usuario" Member="Maestro" ThisKey="idMaestro" OtherKey="id" Type="Maestro" IsForeignKey="true" />
+      <Association Name="Estados_Usuario" Member="Estados" ThisKey="Estado" OtherKey="id" Type="Estados" IsForeignKey="true" />
+      <Association Name="Cargo_Usuario" Member="Cargo" ThisKey="idCargo" OtherKey="id" Type="Cargo" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

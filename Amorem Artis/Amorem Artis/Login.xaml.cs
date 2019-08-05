@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace Amorem_Artis
 {
@@ -19,6 +20,10 @@ namespace Amorem_Artis
     /// </summary>
     public partial class Login : Window
     {
+        SqlConnection connectionString = new SqlConnection(Properties.Settings.Default.AmoremArtisConnectionString);
+
+        public static string User;
+
         public Login()
         {
             InitializeComponent();
@@ -27,8 +32,10 @@ namespace Amorem_Artis
         private void BtnIngresar_Click(object sender, RoutedEventArgs e)
         {
             MainWindow win = new MainWindow();
-            if (txtUsuario.Text == "user" && txtContrasena.Password == "1234")
+            
+            if (AutenticacionUsuario(txtUsuario.Text, txtContrasena.Password))
             {
+                User = txtUsuario.Text;
                 MessageBox.Show("Usted a ingresado como adminstrador", "Bienvenido!");
                 win.Show();
                 this.Close();
@@ -36,7 +43,7 @@ namespace Amorem_Artis
             else
             {
                 MessageBox.Show("Usuario o contraseña invalida", "Ingreso fallido");
-            }            
+            }
         }
 
         private void BtnSalir_Click(object sender, RoutedEventArgs e)
@@ -45,11 +52,26 @@ namespace Amorem_Artis
             {
                 App.Current.Shutdown();
             }
+        }
+
+        
+        private bool AutenticacionUsuario(string userName, string password)
+        {
+            DataClasses1DataContext context = new DataClasses1DataContext(connectionString);
+
+            var query = from usuario in context.Usuario
+                        where usuario.Usuario1 == userName &&
+                        password == usuario.Pass
+                        select usuario;
+
+            if (query.Any())
+            {
+                return true;
+            }
             else
             {
-                //No hace nada
+                return false;
             }
-
         }
     }
 }
