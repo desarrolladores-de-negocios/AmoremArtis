@@ -115,6 +115,11 @@ namespace Amorem_Artis
             }
         }
 
+        private void BtnAyuda_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("/Manuales/index.html");
+        }
+
         private string MostrarUsuarioActivo()
         {
             DataClasses1DataContext context = new DataClasses1DataContext(connectionString);
