@@ -23,6 +23,7 @@
                 <TextBlock Text="M E N U" FontSize="40"  VerticalAlignment="Center" HorizontalAlignment="Center"  FontFamily="Candara Light"/>
                 <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10" HorizontalAlignment="Right">
                     <StackPanel Width="150">
+                        <Button x:Name="BtnAyuda" Content="Ayuda" Click="BtnAyuda_Click"/>
                         <Button x:Name="BtnCerrarSesion" Content="Cerrar Sesion" Click="BtnCerrarSesion_Click"/>
                         <Button x:Name="BtnSalir" Content="Salir" Click="BtnSalir_Click"/>
                     </StackPanel>

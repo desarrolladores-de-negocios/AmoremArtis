@@ -111,5 +111,11 @@ namespace Amorem_Artis
                 //No hace nada
             }
         }
+
+        private void BtnAyuda_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("/Manuales/index.html");
+
+        }
     }
 }
