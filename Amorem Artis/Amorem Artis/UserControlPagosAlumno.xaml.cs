@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace Amorem_Artis
 {
@@ -20,9 +21,13 @@ namespace Amorem_Artis
     /// </summary>
     public partial class UserControlPagosAlumno : UserControl
     {
+        SqlConnection connectionString = new SqlConnection(Properties.Settings.Default.AmoremArtisConnectionString);
+
         public UserControlPagosAlumno()
         {
             InitializeComponent();
+
+            PopularGridPagos();
         }
         public void Salir_Click(object sender, RoutedEventArgs e)
         {
@@ -49,6 +54,27 @@ namespace Amorem_Artis
             GridPagosAlumno.Visibility = Visibility.Collapsed;
             dgPagosPendientesAlumno.Visibility = Visibility.Collapsed;
             lblPagosPendientesAlumno.Visibility = Visibility.Collapsed;
+        }
+
+        private void PopularGridPagos()
+        {
+            DataClasses1DataContext context = new DataClasses1DataContext(connectionString);
+
+            var query = from pagos in context.Mensualidad
+                        join alumnos in context.Alumno on pagos.idAlumno equals alumnos.id
+                        join nombre in context.Nombre on alumnos.id equals nombre.idAlumno
+                        join apellido in context.Apellido on alumnos.id equals apellido.idAlumno
+                        where pagos.idEstado == 4
+                        select new
+                        {
+                            pagos.id,
+                            Nombre = nombre.Nombre1 + "" + apellido.Apellido1,
+                            Mensualidad = pagos.Mensualidad1
+                        };
+
+            dgPagosPendientesAlumno.ItemsSource = query;
+            dgPagosPendientesAlumno.DisplayMemberPath = "Nombre";
+            dgPagosPendientesAlumno.SelectedValuePath = "id";
         }
     }
 }

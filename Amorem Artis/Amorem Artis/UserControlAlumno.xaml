@@ -55,12 +55,8 @@
                     <TextBox x:Name="txtTelefono"  Width="200" FontSize="20" Margin="83,0,0,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" >
-                    <TextBlock Text="Padres " FontSize="20" VerticalAlignment="Center"/>
-                    <TextBox x:Name="txtPadre"  Width="200" FontSize="20" Margin="100,0,0,0"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" >
                     <TextBlock Text="Tipo de alumno " FontSize="20" VerticalAlignment="Center" Margin="0,2,0,2"/>
-                    <ComboBox x:Name="comboBox" FontSize="20" Margin="20,0,0,0" Width="200"/>
+                    <ComboBox x:Name="cbTipoAlumno" FontSize="20" Margin="20,0,0,0" Width="200"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" >
                     <TextBlock Text="Descuento" FontSize="20" VerticalAlignment="Center" Margin="0,2,0,2"/>
@@ -164,7 +160,7 @@
         </Grid>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4">
-            <Button x:Name="btnAgregar" Content="Agregar" Margin="10,0,0,0" Visibility="Collapsed"/>
+            <Button x:Name="btnAgregar" Content="Agregar" Margin="10,0,0,0" Visibility="Collapsed" Click="BtnAgregar_Click"/>
             <Button x:Name="btnModificar" Content="Modificar" Margin="10,0,0,0"  Visibility="Collapsed" />
             <Button x:Name="btnEliminar" Content="Eliminar" Margin="10,0,0,0" Visibility="Collapsed"  />
             <Button x:Name="btnVolver" Content="Volver" Margin="10,0,0,0" Visibility="Collapsed" Click="BtnVolver_Click" />

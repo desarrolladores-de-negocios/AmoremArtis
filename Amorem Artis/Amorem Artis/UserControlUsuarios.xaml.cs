@@ -126,14 +126,14 @@ namespace Amorem_Artis
                            select new
                            {
                                usuario.id,
-                               usuario.Usuario1,
-                               nombre.Nombre1,
-                               apellido.Apellido1
+                               Usuario = usuario.Usuario1,
+                               Nombre = nombre.Nombre1,
+                               Apellido = apellido.Apellido1
                            };
 
             dataUsuarios.ItemsSource = sqlquery;
             dataUsuarios.DisplayMemberPath = "nombreCompleto";
-            dataUsuarios.SelectedValuePath = "Usuario1";
+            dataUsuarios.SelectedValuePath = "Usuario";
 
         }
 
@@ -150,12 +150,12 @@ namespace Amorem_Artis
                            select new
                            {
                                usuario.id,
-                               usuario.Usuario1,
-                               nombreCompleto = nombre.Nombre1 + " " + apellido.Apellido1
+                               Usuario = usuario.Usuario1,
+                               Maestro = nombre.Nombre1 + " " + apellido.Apellido1
                            };
 
             datauser.ItemsSource = sqlquery;
-            datauser.DisplayMemberPath = "nombreCompleto";
+            datauser.DisplayMemberPath = "Maestro";
             datauser.SelectedValuePath = "id";
         }
 
@@ -267,6 +267,7 @@ namespace Amorem_Artis
                         cbMaestro.SelectedIndex = -1;
                         cbCargo.SelectedIndex = -1;
                         PopularDataGridUsuarios();
+                        PopularDataGridNuevoUsuarios();
                     }
                     else
                     {
